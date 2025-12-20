@@ -1,0 +1,114 @@
+{
+    "key": "group_hero",
+    "title": "Hero",
+    "fields": [
+        {
+            "key": "field_hero_background",
+            "label": "Hero Background",
+            "name": "hero_background",
+            "type": "image",
+            "required": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_hero_banner_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "required": 1,
+            "default_value": "Trusted Intelligence"
+        },
+        {
+            "key": "field_hero_banner_heading",
+            "label": "Heading",
+            "name": "heading",
+            "type": "text",
+            "required": 1,
+            "default_value": "Unleashing innovation and resiliency"
+        },
+        {
+            "key": "field_hero_banner_subheading",
+            "label": "Subheading",
+            "name": "subheading",
+            "type": "text",
+            "required": 1,
+            "default_value": "Lorem ipsum dolor sit amet consectetur. Interdum nam facilisi blandit tristique sed etiam sem nam."
+        },
+        {
+            "key": "field_hero_banner_buttons",
+            "label": "Buttons",
+            "name": "buttons",
+            "type": "repeater",
+            "min": 1,
+            "max": 3,
+            "layout": "row",
+            "button_label": "Add Button",
+            "sub_fields": [
+                {
+                    "key": "field_hero_banner_button_text",
+                    "label": "Button Text",
+                    "name": "text",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_hero_banner_button_url",
+                    "label": "Button URL",
+                    "name": "url",
+                    "type": "url",
+                    "required": 1
+                },
+                {
+                    "key": "field_hero_banner_button_style",
+                    "label": "Button Style",
+                    "name": "style",
+                    "type": "select",
+                    "required": 1,
+                    "choices": {
+                        "primary": "Primary",
+                        "secondary": "Secondary"
+                    },
+                    "default_value": "primary",
+                    "ui": 1
+                }
+            ]
+        },
+        {
+            "key": "field_hero_inner",
+            "label": "Inner",
+            "name": "inner",
+            "type": "repeater",
+            "min": 1,
+            "max": 4,
+            "layout": "row",
+            "button_label": "Add Inner",
+            "sub_fields": [
+                {
+                    "key": "field_hero_inner_title",
+                    "label": "Title Hero",
+                    "name": "title_hero",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": "Ranked<br>#1"
+                },
+                {
+                    "key": "field_hero_inner_text",
+                    "label": "Text Hero",
+                    "name": "text_hero",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": "Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur."
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/hero"
+            }
+        ]
+    ]
+}

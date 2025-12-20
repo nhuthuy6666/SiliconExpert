@@ -1,0 +1,107 @@
+{
+    "key": "group_block_resources",
+    "title": "Block Resources",
+    "fields": [
+        {
+            "key": "field_left_blog_image",
+            "label": "Left Blog Image",
+            "name": "left_blog_image",
+            "type": "image",
+            "required": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_left_blog_video",
+            "label": "Left Blog Video",
+            "name": "left_blog_video",
+            "type": "file",
+            "required": 0,
+            "return_format": "url",
+            "library": "all",
+            "mime_types": "mp4,webm,ogg,mov"
+        },
+        {
+            "key": "field_left_blog_title",
+            "label": "Left Blog Title",
+            "name": "left_blog_title",
+            "type": "text",
+            "required": 1,
+            "default_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor"
+        },
+        {
+            "key": "field_left_blog_date",
+            "label": "Left Blog Date",
+            "name": "left_blog_date",
+            "type": "date_picker",
+            "required": 1
+        },
+        {
+            "key": "field_left_blog_minute",
+            "label": "Left Blog Minute",
+            "name": "left_blog_minute",
+            "type": "number",
+            "required": 1,
+            "default_value": "4"
+        },
+        {
+            "key": "field_right_blogs",
+            "label": "Right Blogs",
+            "name": "right_blogs",
+            "type": "repeater",
+            "min": 1,
+            "max": 2,
+            "layout": "row",
+            "button_label": "Add Blogs",
+            "sub_fields": [
+                {
+                    "key": "field_right_blog_image",
+                    "label": "Right Blog Image",
+                    "name": "right_blog_image",
+                    "type": "image",
+                    "required": 1
+                },
+                {
+                    "key": "field_right_blog_video",
+                    "label": "Right Blog Video",
+                    "name": "right_blog_video",
+                    "type": "file",
+                    "required": 0,
+                    "return_format": "url",
+                    "library": "all",
+                    "mime_types": "mp4,webm,ogg,mov"
+                },
+                {
+                    "key": "field_right_blog_title",
+                    "label": "Right Blog Title",
+                    "name": "right_blog_title",
+                    "type": "text",
+                    "required": 1
+                },
+                {
+                    "key": "field_right_blog_date",
+                    "label": "Right Blog Date",
+                    "name": "right_blog_date",
+                    "type": "date_picker",
+                    "required": 1
+                },
+                {
+                    "key": "field_right_blog_minute",
+                    "label": "Right Blog Minute",
+                    "name": "right_blog_minute",
+                    "type": "number",
+                    "required": 1,
+                    "default_value": "4"
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/block-resources"
+            }
+        ]
+    ]
+}

@@ -1,0 +1,133 @@
+.hero-block{
+    @apply flex items-center justify-center px-[87px] flex flex-col pt-[80px];
+    @apply bg-cover bg-center bg-no-repeat bg-se-dark-navy;
+}
+.banner-container {
+    @apply w-full max-w-[1266px] mt-[19.23px] pt-[65.77px] pb-[87.72px] flex flex-col;
+
+    .banner-title {
+        @apply text-[20px] font-[500] text-se-yellow flex justify-start items-center;
+    }
+
+    .banner-heading-wrapper {
+        @apply w-[796px] flex justify-start items-center mt-[15px];
+
+        h1 {
+            @apply text-[64px] font-[500] mr-[142px] leading-[1.1];
+        }
+    }
+
+    .banner-subheading {
+        @apply w-[560px] flex justify-start items-center leading-tight text-[20px] font-[500] text-[#FFFFFF] font-[400] mt-[32px];
+    }
+
+    .banner-buttons {
+        @apply flex justify-start items-center gap-[24px] mt-[232px];
+
+        .banner-button-primary {
+            @apply relative overflow-hidden bg-se-yellow text-se-dark-navy py-[19px] px-[40px] w-[195px] h-[56px] flex flex-row justify-end pr-[4px] items-center rounded-[4px];
+
+            .text-container {
+                @apply relative h-[56px] mr-[23px] overflow-hidden flex items-center;
+
+                span {
+                    @apply block text-[14px] font-[500] text-se-dark-navy transition-transform duration-300 ease-out;
+                }
+
+                .button-text-old {
+                    @apply translate-y-0;
+                }
+
+                .button-text-new {
+                    @apply absolute left-0 top-[56px];
+                }
+            }
+
+            .icon-container {
+                @apply relative overflow-hidden w-[48px] h-[48px] bg-se-dark-navy rounded-[4px] p-[12px] flex justify-center items-center;
+
+                .arrow-container {
+                    @apply relative w-[20px] h-[20px] flex justify-center items-center overflow-hidden;
+                }
+
+                .arrow-old,
+                .arrow-new {
+                    @apply w-[24px] h-[24px] flex justify-center items-center transition-transform duration-300 ease-out;
+                }
+
+                .arrow-old img,
+                .arrow-new img {
+                    @apply w-[13.5px] h-[13.5px];
+                }
+
+                .arrow-old {
+                    @apply translate-x-0 translate-y-0;
+                }
+
+                .arrow-new {
+                    @apply absolute -translate-x-[32px] translate-y-[9.8px];
+                }
+            }
+        }
+
+        .banner-button-primary:hover {
+            .text-container {
+                .button-text-old {
+                    @apply -translate-y-[56px];
+                }
+
+                .button-text-new {
+                    @apply -translate-y-[38px];
+                }
+            }
+
+            .icon-container {
+                .arrow-old {
+                    @apply translate-x-[32px] -translate-y-[9.8px];
+                }
+
+                .arrow-new {
+                    @apply translate-x-0 translate-y-0;
+                }
+            }
+        }
+
+        .banner-button-secondary {
+            @apply relative overflow-hidden border-[1px] border-se-yellow py-[19px] px-[40px] w-[177px] h-[56px] flex justify-center items-center rounded-[4px] whitespace-nowrap;
+
+            p {
+                @apply relative z-10 text-[14px] font-[500] leading-none;
+            }
+        }
+
+        .banner-button-secondary:hover {
+
+            .fill-layout {
+                @apply h-full;
+            }
+
+            p {
+                @apply text-se-dark-navy;
+            }
+        }
+    }
+}
+.hero-container {
+    @apply w-full max-w-[1266px] mt-[12.28px] pt-[32px];
+
+    .hero-inner {
+        @apply h-[348px] py-[80px] flex justify-between items-center;
+
+        .hero-item {
+            @apply flex flex-col gap-[16px];
+
+            h3 {
+                @apply text-[40px] font-[400] leading-[1.25] drop-shadow-[0_0_5px_#2E7BFF];
+            }
+
+            p {
+                @apply w-[250px] h-[72px] text-[16px] font-[400];
+            }
+        }
+    }
+}

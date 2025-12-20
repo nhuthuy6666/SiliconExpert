@@ -1,0 +1,52 @@
+
+.se-marquee {
+    @apply relative bg-very-dark-blue pt-[96px] pb-[76px] flex flex-col items-center gap-[44px];
+}
+
+.se-marquee__overlay {
+    @apply absolute inset-0 bg-black/20 pointer-events-none;
+}
+
+.se-marquee__fade-left {
+    @apply absolute inset-y-0 left-0 bg-gradient-to-r from-[#11213F]/70 via-[#11213F]/30 to-transparent w-[120px] pointer-events-none;
+}
+
+.se-marquee__fade-right {
+    @apply absolute inset-y-0 right-0 bg-gradient-to-r from-[#11213F]/70 via-[#11213F]/30 to-transparent w-[120px] rotate-180 pointer-events-none;
+}
+
+.se-marquee__header {
+    @apply relative z-10 w-full max-w-[1266px] flex flex-row items-center gap-[40px];
+}
+
+.se-marquee__divider {
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[40px];
+}
+
+.se-marquee__title {
+    @apply text-[20px] font-[500];
+}
+
+.se-marquee__body {
+    @apply pt-[42.03px] pb-[48.97px] w-full;
+}
+
+.se-marquee__viewport {
+    @apply overflow-hidden w-full;
+}
+
+.se-marquee__track {
+    @apply flex w-max whitespace-nowrap animate-marquee;
+}
+
+.se-marquee__group {
+    @apply flex flex-row gap-[28px] pr-[28px];
+}
+
+.se-marquee__item {
+    @apply w-[260px] h-[62px] px-[19.76px] py-[1.94px] shrink-0;
+}
+
+.se-marquee__img {
+    @apply w-[220.48px] h-[58.13px] object-scale-down;
+}

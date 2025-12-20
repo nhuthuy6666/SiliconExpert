@@ -1,0 +1,14 @@
+{
+    "name": "acf/testimonial",
+    "title": "Testimonial",
+    "description": "Testimonial block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["testimonial"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

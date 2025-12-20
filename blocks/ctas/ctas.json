@@ -1,0 +1,73 @@
+{
+    "key": "group_CTAs",
+    "title": "CTAs",
+    "fields": [
+        {
+            "key": "field_left_CTAs_image",
+            "label": "Left CTAs Image",
+            "name": "left_CTAs_image",
+            "type": "image",
+            "required": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_left_CTAs_video",
+            "label": "Left CTAs Video",
+            "name": "left_CTAs_video",
+            "type": "file",
+            "required": 0,
+            "return_format": "url",
+            "library": "all",
+            "mime_types": "mp4,webm,ogg,mov"
+        },
+        {
+            "key": "field_left_CTAs_title",
+            "label": "Left CTAs Title",
+            "name": "left_CTAs_title",
+            "type": "text",
+            "required": 1,
+            "default_value": "Talk with an expert"
+        },
+        {
+            "key": "field_left_CTAs_text",
+            "label": "Left CTAs Text",
+            "name": "left_CTAs_text",
+            "type": "text",
+            "required": 1,
+            "default_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor"
+        },
+        {
+            "key": "field_right_CTAs_image",
+            "label": "Right CTAs Image",
+            "name": "right_CTAs_image",
+            "type": "image",
+            "required": 1,
+            "default_value": ""
+        },
+        {
+            "key": "field_right_CTAs_title",
+            "label": "Right CTAs Title",
+            "name": "right_CTAs_title",
+            "type": "text",
+            "required": 1,
+            "default_value": "Request a demo"
+        },
+        {
+            "key": "field_right_CTAs_text",
+            "label": "Right CTAs Text",
+            "name": "right_CTAs_text",
+            "type": "text",
+            "required": 1,
+            "default_value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/ctas"
+            }
+        ]
+    ]
+}

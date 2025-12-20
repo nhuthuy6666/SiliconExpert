@@ -1,0 +1,14 @@
+{
+    "name": "acf/marquee",
+    "title": "Marquee",
+    "description": "Marquee block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["marquee"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

@@ -1,0 +1,80 @@
+
+.se-testimonial {
+    @apply w-full bg-no-repeat bg-cover bg-center pt-[160px] pb-[149px] pl-[197px] pr-[133px] flex flex-col items-center justify-center;
+}
+
+.se-testimonial__inner {
+    @apply w-full max-w-[1266px] flex flex-row items-center gap-[130px];
+}
+
+.se-testimonial__content {
+    @apply w-[728px] h-[299px] flex flex-col gap-[40px];
+}
+
+.se-testimonial__logo {
+    @apply w-[126px] h-[35px] px-[11.07px] py-[6.56px];
+}
+
+.se-testimonial__logo-img {
+    @apply w-[103.85px] h-[21.87px];
+}
+
+.se-testimonial__body {
+    @apply h-[224px] gap-[64px] flex flex-col justify-start;
+}
+
+.se-testimonial__quote {
+    @apply text-[32px] font-[500] leading-[1.25];
+}
+
+.se-testimonial__footer {
+    @apply w-[727px] flex flex-row justify-between;
+}
+
+.se-testimonial__divider-group {
+    @apply flex flex-row gap-[40px] items-center;
+}
+
+.se-testimonial__divider {
+    @apply border-se-yellow w-[32px] h-[0px] border-[1px] -rotate-90 flex flex-row -ml-[12px];
+}
+
+.se-testimonial__progress {
+    @apply w-[64px] h-[3px] bg-se-dark-navy;
+}
+
+.se-testimonial__progress-fill {
+    @apply w-[25px] h-[3px] bg-white;
+}
+
+.se-testimonial__nav {
+    @apply flex flex-row gap-[8px] items-center;
+}
+
+.se-testimonial__nav-btn {
+    @apply w-[40px] h-[40px] flex flex-row items-center justify-center rounded-[4px];
+}
+
+.se-testimonial__nav-btn-inner {
+    @apply w-[20px] h-[20px] flex flex-row items-center justify-center;
+}
+
+.se-testimonial__nav-icon {
+    @apply w-[7.5px] h-[13.75px];
+}
+
+.se-testimonial__aside {
+    @apply w-[252px] flex flex-col gap-[32px] items-start;
+}
+
+.se-testimonial__photo {
+    @apply w-[191px] h-[191px] rounded-[6px];
+}
+
+.se-testimonial__meta {
+    @apply flex flex-col gap-[8px];
+}
+
+.se-testimonial__meta-line {
+    @apply text-[14px] font-[400];
+}

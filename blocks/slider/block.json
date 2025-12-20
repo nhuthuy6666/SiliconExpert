@@ -1,0 +1,14 @@
+{
+    "name": "acf/slider",
+    "title": "Slider",
+    "description": "Slider block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["slider"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

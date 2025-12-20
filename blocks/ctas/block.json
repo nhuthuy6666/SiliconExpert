@@ -1,0 +1,14 @@
+{
+    "name": "acf/ctas",
+    "title": "CTAs",
+    "description": "CTAs block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["CTAs"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

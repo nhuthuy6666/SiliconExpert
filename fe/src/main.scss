@@ -1,0 +1,7 @@
+// Main SCSS entry point - @use must come before @tailwind
+@use './styles/index' as *;
+
+// Tailwind CSS directives
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

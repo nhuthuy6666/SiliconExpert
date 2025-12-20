@@ -1,0 +1,14 @@
+{
+    "name": "acf/hero",
+    "title": "Hero",
+    "description": "Hero block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["hero"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

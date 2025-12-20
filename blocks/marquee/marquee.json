@@ -1,0 +1,41 @@
+{
+  "key": "group_marquee",
+  "title": "Marquee",
+  "fields": [
+    {
+      "key": "field_marquee_name",
+      "label": "Marquee Name",
+      "name": "marquee_name",
+      "type": "text",
+      "required": 1,
+      "default_value": "Trusted by companies around the world"
+    },
+    {
+        "key": "field_marquee_mg_slide",
+        "label": "Marquee Slide",
+        "name": "marquee_slide",
+        "type": "repeater",
+            "min": 4,
+            "layout": "row",
+            "button_label": "Add Marquee Image",
+            "sub_fields": [
+            {
+                "key": "field_slider_marquee_image",
+                "label": "Image Marquee",
+                "name": "image_marquee",
+                "type": "image",
+                "required": 1
+            }
+        ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "block",
+        "operator": "==",
+        "value": "acf/marquee"
+      }
+    ]
+  ]
+}

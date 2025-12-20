@@ -1,0 +1,14 @@
+{
+    "name": "acf/block-resources",
+    "title": "Block Resources",
+    "description": "Block Resources block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["block resources"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

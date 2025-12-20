@@ -1,0 +1,23 @@
+{
+  "admin.js": {
+    "file": "admin.js",
+    "name": "admin",
+    "src": "admin.js",
+    "isEntry": true,
+    "css": [
+      "assets/admin-CI3aOkR7.css"
+    ]
+  },
+  "main.js": {
+    "file": "main.js",
+    "name": "main",
+    "src": "main.js",
+    "isEntry": true,
+    "imports": [
+      "admin.js"
+    ],
+    "css": [
+      "assets/main-CB-L8blZ.css"
+    ]
+  }
+}

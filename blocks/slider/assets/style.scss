@@ -1,0 +1,112 @@
+.se-slider {
+    @apply relative bg-very-dark-blue pt-[160px] pb-[150px] pr-[120px] pl-[87px] flex flex-col gap-[70px] items-center cursor-pointer;
+}
+
+.se-slider__overlay {
+    @apply absolute inset-0 bg-black/20 pointer-events-none;
+}
+
+.se-slider__header {
+    @apply relative z-10 flex w-full max-w-[1266px] flex-row gap-[40px] items-center;
+}
+
+.se-slider__header-divider {
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[40px];
+}
+
+.se-slider__header-title {
+    @apply text-[20px] font-[500];
+}
+
+.se-slider__controls {
+    @apply flex items-center gap-[40px] ml-auto cursor-pointer;
+}
+
+.se-slider__progress-track {
+    @apply w-[64px] h-[3px] flex bg-se-dark-navy;
+}
+
+.se-slider__progress-fill {
+    @apply bg-white;
+}
+
+.se-slider__counter-button {
+    @apply flex gap-[4px];
+}
+
+.se-slider__counter-text {
+    @apply w-[9px] h-[21px] text-[14px] font-[400];
+}
+
+.se-slider__slides {
+    @apply relative z-10 w-full max-w-[1266px] grid;
+}
+
+.se-slider__slide {
+    @apply col-start-1 row-start-1 flex flex-row items-center gap-[304px];
+}
+
+.se-slider__slide.is-active {
+    @apply pointer-events-auto;
+}
+
+.se-slider__text-col {
+    @apply w-[406px] flex-shrink-0;
+}
+
+.se-slider__text {
+    @apply flex flex-col;
+}
+
+.se-slider__icon {
+    @apply w-[34.38px] h-[34.38px];
+}
+
+.se-slider__slide-title {
+    @apply text-[32px] font-[500] leading-[1.25] mt-[40px];
+}
+
+.se-slider__slide-desc {
+    @apply text-[16px] font-[400] mt-[24px];
+}
+
+.se-slider__cta {
+    @apply relative overflow-hidden w-[145px] h-[48px] border-[1px] border-se-yellow rounded-[4px] px-[24px] py-[15px] mt-[40px] flex justify-center items-center;
+}
+
+.se-slider__cta-text {
+    @apply relative z-10 m-0 text-[14px] font-[500] leading-none whitespace-nowrap;
+}
+
+.se-slider__cta::before {
+    content: "";
+    @apply absolute inset-x-0 bottom-0 h-full bg-se-yellow origin-bottom scale-y-0 transition-transform duration-300;
+}
+
+.se-slider__cta:hover::before {
+    @apply scale-y-100;
+}
+
+.se-slider__cta:hover .se-slider__cta-text {
+    @apply text-se-dark-navy;
+}
+
+.se-slider__image-wrap {
+    @apply w-[900px] h-[570px] py-[25px] px-[24px] border-[1px] border-se-dark-navy rounded-[24px] flex-shrink-0;
+}
+
+.se-slider__image {
+    @apply w-[852px] h-[520px] rounded-[16px] bg-white shadow-[0_0_160px_rgba(46,123,255,0.5)];
+}
+
+.se-slider__image.is-shadow-alt {
+    @apply shadow-[0_0_160px_rgba(202,133,255,0.5)];
+}
+
+.se-slider__text-enter {
+    @apply animate-fade-in-up;
+}
+
+.se-slider__text-leave {
+    @apply animate-fade-out;
+}
