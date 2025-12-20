@@ -76,11 +76,17 @@
  			@apply relative overflow-hidden w-[40px] h-[40px] bg-se-dark-navy rounded-[4px] flex justify-center items-center;
  
  			.arrow-container {
- 				@apply relative w-[20px] h-[20px] flex justify-center items-center;
+ 				@apply relative w-[20px] h-[20px] flex justify-center items-center overflow-hidden;
  			}
  
- 			img {
- 				@apply w-[11.25px] h-[11.25px] transition-transform duration-300 ease-out;
+ 			.arrow-old,
+ 			.arrow-new {
+ 				@apply w-[20px] h-[20px] flex justify-center items-center transition-transform duration-300 ease-out;
+ 			}
+ 
+ 			.arrow-old img,
+ 			.arrow-new img {
+ 				@apply w-[11.25px] h-[11.25px];
  			}
  
  			.arrow-old {
