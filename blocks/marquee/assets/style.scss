@@ -16,11 +16,11 @@
 }
 
 .se-marquee__header {
-    @apply relative z-10 w-full max-w-[1266px] flex flex-row items-center gap-[40px];
+    @apply relative z-10 w-full max-w-[1266px] flex flex-row items-center gap-[40px] mx-[87px];
 }
 
 .se-marquee__divider {
-    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[40px];
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[73px];
 }
 
 .se-marquee__title {

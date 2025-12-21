@@ -1,5 +1,5 @@
 .se-slider {
-    @apply relative bg-very-dark-blue pt-[160px] pb-[150px] pr-[120px] pl-[87px] flex flex-col gap-[70px] items-center cursor-pointer;
+    @apply relative bg-very-dark-blue pt-[160px] pb-[150px] px-[87px] flex flex-col gap-[70px] items-center cursor-pointer;
 }
 
 .se-slider__overlay {
@@ -11,7 +11,7 @@
 }
 
 .se-slider__header-divider {
-    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[40px];
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[73px];
 }
 
 .se-slider__header-title {
