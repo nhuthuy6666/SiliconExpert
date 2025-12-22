@@ -27,7 +27,7 @@
 <div class="se-ctas">
     <div class="se-ctas__overlay"></div>
     <div class="se-ctas__inner">
-        <div class="se-ctas__card se-ctas__card--left">
+        <div class="se-ctas__card se-ctas__card--left" onmouseenter="const v=this.querySelector('video'); if(v){ v.currentTime=0; v.play(); }" onmouseleave="const v=this.querySelector('video'); if(v){ v.pause(); v.currentTime=0; }">
             <div class="se-ctas__card-header">
                 <h5 class="se-ctas__title"><?php echo esc_html( (string) ( $data->left_CTAs_title ?? '' ) ); ?></h5>
                 <div class="se-ctas__icon-btn se-ctas__icon-btn--yellow">
@@ -42,7 +42,7 @@
             <div class="se-ctas__media">
                 <img class="se-ctas__media-image" src="<?php echo esc_url( $left_image_url ); ?>" alt="<?php echo esc_attr( $left_image_alt ); ?>" />
                 <?php if ( $left_video_url ) : ?>
-                    <video class="se-ctas__media-video" src="<?php echo esc_url( $left_video_url ); ?>" autoplay muted loop playsinline preload="metadata"></video>
+                    <video class="se-ctas__media-video" src="<?php echo esc_url( $left_video_url ); ?>" muted loop playsinline preload="metadata"></video>
                 <?php endif; ?>
             </div>
         </div>

@@ -19,10 +19,10 @@
 			<div class="se-slider__progress-track">
 				<div class="se-slider__progress-fill" :style="total ? `width:${Math.round(((activeIndex+1)/total)*64)}px` : 'width:0px'"></div>
 			</div>
-			<button type="button" class="se-slider__counter-button" @click.stop="next(); toggleShadow()">
-				<p class="se-slider__counter-text" x-text="activeIndex + 1"><?php echo $slider_total ? 1 : 0; ?></p>
+			<button type="button" class="se-slider__counter-button">
+				<p class="se-slider__counter-text" x-text="activeIndex + 1"></p>
 				<p class="se-slider__counter-text">/</p>
-				<p class="se-slider__counter-text" x-text="total"><?php echo (int) $slider_total; ?></p>
+				<p class="se-slider__counter-text" x-text="total"></p>
 			</button>
 		</div>
 	</div>

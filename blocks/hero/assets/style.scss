@@ -1,31 +1,31 @@
 .hero-block{
-    @apply flex items-center justify-center px-[87px] flex flex-col pt-[80px];
+    @apply flex items-center justify-center px-[24px] sm:px-[87px] flex flex-col pt-[80px];
     @apply bg-cover bg-center bg-no-repeat bg-se-dark-navy;
 }
 .banner-container {
-    @apply w-full max-w-[1266px] mt-[19.23px] pt-[65.77px] pb-[87.72px] flex flex-col;
+    @apply w-full max-w-[414px] gap-[40px] sm:gap-[24px] sm:gap-[0px] sm:max-w-[1266px] mt-[19.23px] pt-[65.77px] pb-[87.72px] flex flex-col;
 
     .banner-title {
         @apply text-[20px] font-[500] text-se-yellow flex justify-start items-center;
     }
 
     .banner-heading-wrapper {
-        @apply w-[796px] flex justify-start items-center mt-[15px];
+        @apply w-[366px] sm:w-[796px] flex justify-start items-center sm:mt-[15px];
 
         h1 {
-            @apply text-[64px] font-[500] mr-[142px] leading-[1.1];
+            @apply text-[64px] font-[500] sm:mr-[142px] leading-[1.1];
         }
     }
 
     .banner-subheading {
-        @apply w-[560px] flex justify-start items-center leading-tight text-[20px] font-[500] text-[#FFFFFF] font-[400] mt-[32px];
+        @apply w-full sm:w-[560px] flex justify-start items-center leading-tight text-[20px] font-[500] text-[#FFFFFF] font-[400] mt-[32px];
     }
 
     .banner-buttons {
-        @apply flex justify-start items-center gap-[24px] mt-[232px];
+        @apply flex flex-col sm:flex-row justify-start items-start sm:items-center gap-[24px] mt-[40px] sm:mt-[232px];
 
         .banner-button-primary {
-            @apply relative overflow-hidden bg-se-yellow text-se-dark-navy py-[19px] px-[40px] w-[195px] h-[56px] flex flex-row justify-end pr-[4px] items-center rounded-[4px];
+            @apply relative overflow-hidden bg-se-yellow text-se-dark-navy py-[19px] px-[40px] w-[195px] h-[56px] flex flex-row items-center justify-between pr-[4px] rounded-[4px];
 
             .text-container {
                 @apply relative h-[56px] mr-[23px] overflow-hidden flex items-center;
@@ -113,10 +113,10 @@
     }
 }
 .hero-container {
-    @apply w-full max-w-[1266px] mt-[12.28px] pt-[32px];
+    @apply w-full sm:px-[0px] max-w-[414px] sm:max-w-[1266px] mt-[12.28px] pt-[32px];
 
     .hero-inner {
-        @apply h-[348px] py-[80px] flex justify-between items-center;
+        @apply h-[348px] py-[48px] sm:py-[80px] flex flex-col sm:flex-row gap-[32px] sm:justify-between sm:items-center;
 
         .hero-item {
             @apply flex flex-col gap-[16px];

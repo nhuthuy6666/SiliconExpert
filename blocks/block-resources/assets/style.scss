@@ -1,17 +1,17 @@
 .se-block-resources {
-    @apply bg-white px-[87px] pt-[80px] pb-[83px] flex flex-col justify-center items-center gap-[48px];
+    @apply bg-white px-[24px] sm:px-[87px] py-[48px] sm:pt-[80px] sm:pb-[83px] flex flex-col justify-center items-center gap-[32px] sm:gap-[48px];
 }
 
 .se-block-resources__header {
-    @apply flex w-full max-w-[1266px] flex-row justify-between items-center;
+    @apply flex w-full max-w-[414px] sm:max-w-[1266px] flex-row justify-between items-center;
 }
 
 .se-block-resources__header-left {
-    @apply flex flex-row items-center gap-[40px];
+    @apply flex flex-row items-center;
 }
 
 .se-block-resources__divider {
-    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[73px];
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[28px] sm:-ml-[73px];
 }
 
 .se-block-resources__title {
@@ -38,11 +38,11 @@
 }
 
 .se-block-resources__content {
-    @apply flex max-w-[1266px] flex-row items-start gap-[24px];
+    @apply flex w-full max-w-[414px] sm:max-w-[1266px] flex-col sm:flex-row items-start gap-[24px];
 }
 
 .se-block-resources__main {
-    @apply w-[836px] flex flex-col items-start gap-[32px];
+    @apply w-full sm:w-[836px] flex flex-col items-start gap-[16px] sm:gap-[32px];
 }
 
 .se-block-resources__image-wrap {
@@ -91,7 +91,7 @@
 }
 
 .se-block-resources__main-image {
-    @apply w-[836px] h-[420px] rounded-[6px];
+    @apply w-full w-[366px] sm:w-[836px] h-[198.81px] sm:h-[420px] rounded-[6px];
 }
 
 .se-block-resources__main-meta {
@@ -119,11 +119,11 @@
 }
 
 .se-block-resources__side {
-    @apply flex flex-col w-[406px] gap-[32px];
+    @apply flex flex-col w-full sm:w-[406px] gap-[32px];
 }
 
 .se-block-resources__card {
-    @apply flex flex-col w-[406px] gap-[16px];
+    @apply flex flex-col w-full sm:w-[406px] gap-[16px];
 }
 
 .se-block-resources__media {
@@ -141,7 +141,7 @@
 }
 
 .se-block-resources__card-image {
-    @apply w-[406px] h-[221px] rounded-[6px];
+    @apply w-full w-[366px] sm:w-[406px] h-[198.81px] rounded-[6px];
 }
 
 .se-block-resources__card-meta {

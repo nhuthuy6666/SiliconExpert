@@ -3,6 +3,30 @@
     "title": "Block Resources",
     "fields": [
         {
+            "key": "field_resources_title",
+            "label": "Resources Title",
+            "name": "resources_title",
+            "type": "text",
+            "required": 1,
+            "default_value": "Insights and resources"
+        },
+        {
+            "key": "field_resources_second_button",
+            "label": "Resources Seccondary Button",
+            "name": "resources_second_button",
+            "type": "text",
+            "required": 1,
+            "default_value": "Secondary CTA"
+        },
+        {
+            "key": "field_resources_second_link",
+            "label": "Resources Seccondary Link",
+            "name": "resources_second_link",
+            "type": "url",
+            "required": 1,
+            "default_value": "#"
+        },
+        {
             "key": "field_left_blog_image",
             "label": "Left Blog Image",
             "name": "left_blog_image",

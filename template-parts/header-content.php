@@ -31,6 +31,7 @@
 		</nav>
 		<div class="search">
 			<img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/find.svg" alt="" @click="activeMenu = null; showSearchPopover = true">
+			<img class="menu-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg" alt="">
 			<div class="language-selector">
 				<p>EN</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="">
