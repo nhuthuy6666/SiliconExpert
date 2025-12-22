@@ -1,5 +1,5 @@
 .site-header {
-    @apply absolute left-0 top-0 w-full z-50 py-[16px] px-[87px] flex items-center justify-center bg-transparent;
+    @apply absolute left-0 top-0 w-full z-50 px-[24px] py-[18px] sm:py-[16px] sm:px-[87px] flex items-center justify-center bg-transparent;
 }
 
 .site-header.has-popover-open {
@@ -11,13 +11,24 @@
 }
 
 .header {
-    @apply max-w-[1266px] flex justify-between items-center gap-[81.16px];
+    @apply flex justify-between items-center w-full sm:gap-[81.16px] max-w-[414px] sm:max-w-[1266px];
 
     .logo {
-        @apply w-[174.68px] h-[36px];
+        @apply w-[174.68px] h-[36px] flex-shrink-0;
+
+        a {
+            @apply block w-full h-full;
+        }
+
+        img {
+            @apply w-full h-full object-contain block;
+        }
     }
 
     .menu {
+
+        @apply hidden sm:flex;
+
         #main-menu {
             @apply flex justify-between items-center gap-[24px];
 
@@ -31,14 +42,18 @@
     }
 
     .search {
-        @apply flex justify-between items-center gap-[24px];
+        @apply flex justify-between items-center gap-[16px] sm:gap-[24px];
 
         .search-icon {
-            @apply w-[20px] h-[20px] cursor-pointer;
+            @apply size-[24px] sm:size-[20px] cursor-pointer;
+        }
+
+        .menu-icon{
+            @apply size-[24px] cursor-pointer sm:hidden
         }
 
         .language-selector {
-            @apply flex gap-[4px] items-center;
+            @apply hidden sm:flex gap-[4px] items-center;
 
             p {
                 @apply text-[14px] font-[500];
@@ -50,7 +65,7 @@
         }
 
         .action-buttons {
-            @apply flex items-center gap-[16px];
+            @apply hidden sm:flex items-center gap-[16px];
 
             .login-button {
                 @apply relative overflow-hidden border-[1px] border-se-yellow w-[83px] h-[48px] rounded-[4px] px-[24px] py-[14px];
