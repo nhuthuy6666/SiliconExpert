@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 ?>
-	<header id="masthead" class="site-header" x-data="{ activeMenu: null, showSearchPopover: false, searchTermValue: '', searchTermActive: false }" :class="{ 'has-popover-open': (showSearchPopover || activeMenu !== null) }" @mouseleave="activeMenu = null; showSearchPopover = false; searchTermValue = ''; searchTermActive = false">
+	<header id="masthead" class="site-header" x-data="{ activeMenu: null, showSearchPopover: false, showMobileMenu: false, searchTermValue: '', searchTermActive: false }" x-init="$watch('showMobileMenu', value => document.body.classList.toggle('no-scroll', value))" :class="{ 'has-popover-open': (showSearchPopover || showMobileMenu || activeMenu !== null) }" @mouseleave="activeMenu = null; showSearchPopover = false; searchTermValue = ''; searchTermActive = false">
 	<div class="header">
 		<div class="logo">
 			<a href="<?php echo esc_url(home_url('/')); ?>">
@@ -30,8 +30,8 @@
 			</ul>
 		</nav>
 		<div class="search">
-			<img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/find.svg" alt="" @click="activeMenu = null; showSearchPopover = true">
-			<img class="menu-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg" alt="">
+			<img class="search-icon" src="<?php echo get_template_directory_uri(); ?>/assets/images/find.svg" alt="" @click="activeMenu = null; showMobileMenu = false; showSearchPopover = true">
+			<img class="menu-icon" :src="(showMobileMenu || activeMenu !== null) ? '<?php echo get_template_directory_uri(); ?>/assets/images/x-close.svg' : '<?php echo get_template_directory_uri(); ?>/assets/images/menu.svg'" alt="" @click="if (activeMenu !== null) { activeMenu = null } else if (showMobileMenu) { showMobileMenu = false } else { showMobileMenu = true; showSearchPopover = false; searchTermValue = ''; searchTermActive = false }">
 			<div class="language-selector">
 				<p>EN</p>
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="">
@@ -73,6 +73,66 @@
 		</div>
 	</div>
 
+	<!-- Mobile Menu Popover -->
+	<div class="popover-mobile-menu" x-show="showMobileMenu" x-transition.opacity @keydown.escape.window="showMobileMenu = false" @click.self="showMobileMenu = false">
+		<div class="popover-mobile-menu__panel">
+			<ul class="popover-mobile-menu__list">
+				<li>
+					<a class="popover-mobile-menu__link" href="#" @click.prevent="showMobileMenu = false; showSearchPopover = false; activeMenu = 'solutions'">
+						<h6>Solutions &amp; Products</h6> 
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arr-right.svg" alt="">
+					</a>
+				</li>
+				<li>
+					<a class="popover-mobile-menu__link" href="#" @click.prevent="showMobileMenu = false; showSearchPopover = false; activeMenu = 'partners'">
+						<h6>Partner Integrations</h6> 
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arr-right.svg" alt="">
+					</a>
+				</li>
+				<li>
+					<a class="popover-mobile-menu__link" href="#" @click.prevent="showMobileMenu = false; showSearchPopover = false; activeMenu = 'resources'">
+						<h6>Resources</h6> 
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arr-right.svg" alt="">
+					</a>
+				</li>
+				<li>
+					<a class="popover-mobile-menu__link" href="#" @click.prevent="showMobileMenu = false; showSearchPopover = false; activeMenu = 'company'">
+						<h6>Company</h6> 
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arr-right.svg" alt="">
+					</a>
+				</li>
+				<li>
+					<a class="popover-mobile-menu__link" href="#" @click.prevent="showMobileMenu = false">
+						<h6>Selected Region name </h6>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arr-right.svg" alt="">
+					</a>
+				</li>
+			</ul>
+			<div class="popover-mobile-menu__footer">
+				<button class="popover-mobile-menu__login-button group" type="button">
+					<span class="fill-layout"></span>
+					<p>Login</p>
+				</button>
+				<button class="popover-mobile-menu__get-started-button" type="button">
+					<div class="text-container">
+						<span class="get-started-text-old">Get Started</span>
+						<span class="get-started-text-new">Get Started</span>
+					</div>
+					<div class="icon-container">
+						<div class="arrow-container">
+							<div class="arrow-old">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/vector.svg" alt="">
+							</div>
+							<div class="arrow-new">
+								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/vector.svg" alt="">
+							</div>
+						</div>
+					</div>
+				</button>
+			</div>
+		</div>
+	</div>
+
 	<!-- Mega Menu -->
 	<div class="mega-menu-container" @mouseenter="activeMenu = activeMenu" @mouseleave="activeMenu = null">
 		<!-- Solutions & Products Mega Menu -->
@@ -89,6 +149,10 @@
 			?>
 			
 			<div class="dropdown-container">
+				<button class="popover-mobile-back" type="button" @click="activeMenu = null; showMobileMenu = true; showSearchPopover = false; searchTermValue = ''; searchTermActive = false">
+					<img class="popover-mobile-back__icon" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arr-left.svg" alt="" />
+					<p class="popover-mobile-back__title">Solutions &amp; Products</p>
+				</button>
 				<div class="dropdown-section-1">
 					<div class="section-1-content">
 						<?php if ($heading1): ?>
@@ -194,6 +258,10 @@
 			$partner_simple_image2 = get_field('partner_simple_image2', 'option');
 			?>
 			<div class="dropdown-simple">
+				<button class="popover-mobile-back" type="button" @click="activeMenu = null; showMobileMenu = true; showSearchPopover = false; searchTermValue = ''; searchTermActive = false">
+					<img class="popover-mobile-back__icon" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arr-left.svg" alt="" />
+					<p class="popover-mobile-back__title">Partner Integrations</p>
+				</button>
 				<div class="dropdown-simple__main">
 					<div class="dropdown-simple__header">
 						<?php if (!empty($partner_simple_heading1)) : ?>
@@ -274,6 +342,10 @@
 			$resources_modern_text2 = get_field('resources_modern_text2', 'option');
 			?>
 			<div class="dropdown-modern">
+				<button class="popover-mobile-back" type="button" @click="activeMenu = null; showMobileMenu = true; showSearchPopover = false; searchTermValue = ''; searchTermActive = false">
+					<img class="popover-mobile-back__icon" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arr-left.svg" alt="" />
+					<p class="popover-mobile-back__title">Resources</p>
+				</button>
 				<div class="dropdown-modern__main">
 					<div class="dropdown-modern__main-inner">
 						<?php if (!empty($resources_modern_heading1)) : ?>
@@ -388,6 +460,10 @@
 			$company_classic_image3 = get_field('company_classic_image3', 'option');
 			?>
 			<div class="dropdown-classic">
+				<button class="popover-mobile-back" type="button" @click="activeMenu = null; showMobileMenu = true; showSearchPopover = false; searchTermValue = ''; searchTermActive = false">
+					<img class="popover-mobile-back__icon" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/arr-left.svg" alt="" />
+					<p class="popover-mobile-back__title">Company</p>
+				</button>
 				<div class="dropdown-classic__col dropdown-classic__col--intro">
 					<div class="dropdown-classic__intro">
 						<div class="dropdown-classic__intro-content">

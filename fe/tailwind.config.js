@@ -40,6 +40,14 @@ export default {
                         opacity: '0',
                     },
                 },
+                fadeInRightToLeft: {
+                    '0%': { opacity: '0', transform: 'translateX(3rem)' },
+                    '100%': { opacity: '1', transform: 'translateX(0)' },
+                },
+                fadeOutLeftToRight: {
+                    '0%': { opacity: '1', transform: 'translateX(0)' },
+                    '100%': { opacity: '0', transform: 'translateX(3rem)' },
+                },
                 marquee: {
                     '0%': { transform: 'translateX(0)' },
                     '100%': { transform: 'translateX(-20%)' },
@@ -49,6 +57,8 @@ export default {
                 'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
                 'fade-out': 'fadeOut 0.1s ease-in forwards',
                 'marquee': 'marquee 5s linear infinite',
+                'fadeInRTL': 'fadeInRightToLeft 0.6s ease-out forwards',
+                'fadeOutLTR': 'fadeOutLeftToRight 0.6s ease-in forwards',
             },
         },
     },

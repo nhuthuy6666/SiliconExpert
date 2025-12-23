@@ -7,7 +7,7 @@
 }
 
 .se-slider--desktop {
-    @apply hidden sm:block;
+    @apply hidden sm:flex sm:flex-col sm:gap-[75px];
 }
 
 .se-slider__overlay {

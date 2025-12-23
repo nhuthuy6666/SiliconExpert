@@ -5,7 +5,7 @@
     "src": "admin.js",
     "isEntry": true,
     "css": [
-      "assets/admin-Bd9BR3XN.css"
+      "assets/admin-nCzgCYU7.css"
     ]
   },
   "main.js": {
@@ -17,7 +17,7 @@
       "admin.js"
     ],
     "css": [
-      "assets/main-4xmNpCmR.css"
+      "assets/main-DsM1bLIi.css"
     ]
   }
 }

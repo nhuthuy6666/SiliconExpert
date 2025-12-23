@@ -10,35 +10,47 @@
             "required": 1
         },
         {
-            "key": "field_testimonial_h4",
-            "label": "H4",
-            "name": "testimonial_h4",
-            "type": "text",
-            "required": 1,
-            "default_value": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”"
-        },
-        {
-            "key": "field_testimonial_image",
-            "label": "Image",
-            "name": "testimonial_image",
-            "type": "image",
-            "required": 1
-        },
-        {
-            "key": "field_testimonial_name",
-            "label": "Name",
-            "name": "testimonial_name",
-            "type": "text",
-            "required": 1,
-            "default_value": "Joanne Smith"
-        },
-        {
-            "key": "field_testimonial_job_title",
-            "label": "Job Title",
-            "name": "testimonial_job_title",
-            "type": "text",
-            "required": 1,
-            "default_value": "Job Title and Company"
+            "key": "field_testimonial_items",
+            "label": "Testimonials",
+            "name": "testimonial_items",
+            "type": "repeater",
+            "min": 1,
+            "max": 3,
+            "layout": "row",
+            "button_label": "Add Testimonial",
+            "sub_fields": [
+                {
+                    "key": "field_testimonial_h4",
+                    "label": "H4",
+                    "name": "testimonial_h4",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.”"
+                },
+                {
+                    "key": "field_testimonial_image",
+                    "label": "Image",
+                    "name": "testimonial_image",
+                    "type": "image",
+                    "required": 1
+                },
+                {
+                    "key": "field_testimonial_name",
+                    "label": "Name",
+                    "name": "testimonial_name",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": "Joanne Smith"
+                },
+                {
+                    "key": "field_testimonial_job_title",
+                    "label": "Job Title",
+                    "name": "testimonial_job_title",
+                    "type": "text",
+                    "required": 1,
+                    "default_value": "Job Title and Company"
+                }
+            ]
         }
     ],
     "location": [
