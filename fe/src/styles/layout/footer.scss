@@ -1,21 +1,25 @@
  .site-footer {
- 	@apply fixed bottom-0 left-0 right-0 w-screen max-w-none z-0 bg-se-dark-navy pt-[120px] pl-[87px] pr-[120px] pb-[32px] flex flex-col justify-center items-center gap-[120px];
+ 	@apply sm:fixed sm:bottom-0 sm:left-0 sm:right-0 sm:w-screen sm:max-w-none z-0 bg-se-dark-navy py-[48px] px-[24px] sm:pt-[120px] sm:pl-[87px] sm:pr-[120px] sm:pb-[32px] flex flex-col justify-start sm:justify-center items-center gap-[44px] sm:gap-[120px];
  
  	.footer-content {
- 		@apply w-full max-w-[1266px] flex flex-row items-start gap-[131px];
+ 		@apply w-full max-w-[414px] sm:max-w-[1266px] flex flex-col max-sm:justify-start sm:flex-row items-start gap-[44px] sm:gap-[131px];
  	}
  
  	.footer-logo {
- 		@apply w-[305.7px] h-[63px];
+ 		@apply w-[215.89px] h-[34.57px] sm:w-[305.7px] sm:h-[63px] max-sm:-ml-[27px];
  	}
  
  	.footer-columns {
- 		@apply flex flex-row gap-[39px];
+ 		@apply flex flex-col gap-[24px] sm:flex-row sm:gap-[39px];
  	}
  
  	.footer-column {
- 		@apply flex flex-col w-[176px] gap-[48px];
+ 		@apply flex flex-col gap-[24px] sm:w-[176px] sm:gap-[48px];
  	}
+
+	.footer-items{
+		@apply flex flex-col gap-[16px];
+	}
  
  	.footer-column--cta {
  		@apply gap-[92px];
@@ -34,12 +38,21 @@
  	}
  
  	.footer-bottom {
- 		@apply w-full max-w-[1266px] flex flex-row items-center gap-[53px];
- 	}
- 
- 	.footer-bottom-left {
- 		@apply flex flex-row gap-[16px];
- 	}
+		@apply w-full max-w-[1266px] flex flex-col gap-[8px] max-sm:flex-col-reverse sm:flex-row sm:items-center sm:gap-[53px];
+	}
+
+	.footer-bottom-left {
+		@apply flex flex-col gap-[8px] max-sm:flex-row max-sm:flex-wrap max-sm:gap-[8px] sm:flex-row sm:gap-[16px];
+
+		.footer-bottom-text:nth-child(1) {
+			@apply max-sm:basis-full max-sm:grow-0 max-sm:shrink-0;
+		}
+
+		.footer-bottom-text:nth-child(2),
+		.footer-bottom-text:nth-child(3) {
+			@apply max-sm:basis-auto max-sm:grow-0 max-sm:shrink-0;
+		}
+	}
  
  	.footer-bottom-right {
  		@apply flex flex-row gap-[16px];
@@ -54,7 +67,75 @@
  	}
  
  	.get-started-button {
- 		@apply relative overflow-hidden w-[158px] h-[48px] rounded-[4px] flex flex-row gap-[16px] justify-end items-center px-[24px] py-[14px] pr-[4px] bg-se-yellow;
+ 		@apply relative overflow-hidden w-[158px] h-[48px] rounded-[4px] hidden sm:flex flex-row gap-[16px] justify-end items-center px-[24px] py-[14px] pr-[4px] bg-se-yellow;
+ 
+ 		.text-container {
+ 			@apply relative h-[48px] overflow-hidden flex items-center;
+ 
+ 			span {
+ 				@apply block text-[14px] font-[500] text-se-dark-navy transition-transform duration-300 ease-out;
+ 			}
+ 
+ 			.get-started-text-old {
+ 				@apply translate-y-0;
+ 			}
+ 
+ 			.get-started-text-new {
+ 				@apply absolute left-0 top-[48px];
+ 			}
+ 		}
+ 
+ 		.icon-container {
+ 			@apply relative overflow-hidden w-[40px] h-[40px] bg-se-dark-navy rounded-[4px] flex justify-center items-center;
+ 
+ 			.arrow-container {
+ 				@apply relative w-[20px] h-[20px] flex justify-center items-center overflow-hidden;
+ 			}
+ 
+ 			.arrow-old,
+ 			.arrow-new {
+ 				@apply w-[20px] h-[20px] flex justify-center items-center transition-transform duration-300 ease-out;
+ 			}
+ 
+ 			.arrow-old img,
+ 			.arrow-new img {
+ 				@apply w-[11.25px] h-[11.25px];
+ 			}
+ 
+ 			.arrow-old {
+ 				@apply translate-x-0 translate-y-0;
+ 			}
+ 
+ 			.arrow-new {
+ 				@apply absolute -translate-x-[32px] translate-y-[9.8px];
+ 			}
+ 		}
+ 
+ 		&:hover {
+ 			.text-container {
+ 				.get-started-text-old {
+ 					@apply -translate-y-[48px];
+ 				}
+ 
+ 				.get-started-text-new {
+ 					@apply -translate-y-[34px];
+ 				}
+ 			}
+ 
+ 			.icon-container {
+ 				.arrow-old {
+ 					@apply translate-x-[32px] -translate-y-[9.8px];
+ 				}
+ 
+ 				.arrow-new {
+ 					@apply translate-x-0 translate-y-0;
+ 				}
+ 			}
+ 		}
+ 	}
+
+	.get-started-button-mobile {
+ 		@apply relative overflow-hidden w-[158px] h-[48px] rounded-[4px] sm:hidden flex flex-row gap-[16px] justify-end items-center px-[24px] py-[14px] pr-[4px] bg-se-yellow;
  
  		.text-container {
  			@apply relative h-[48px] overflow-hidden flex items-center;

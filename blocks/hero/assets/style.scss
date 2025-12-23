@@ -116,7 +116,7 @@
     @apply w-full sm:px-[0px] max-w-[414px] sm:max-w-[1266px] mt-[12.28px] pt-[32px];
 
     .hero-inner {
-        @apply h-[348px] py-[48px] sm:py-[80px] flex flex-col sm:flex-row gap-[32px] sm:justify-between sm:items-center;
+        @apply sm:h-[348px] py-[48px] sm:py-[80px] flex flex-col sm:flex-row gap-[32px] sm:justify-between sm:items-center;
 
         .hero-item {
             @apply flex flex-col gap-[16px];

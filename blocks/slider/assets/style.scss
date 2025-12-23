@@ -1,5 +1,13 @@
 .se-slider {
-    @apply relative bg-very-dark-blue pt-[48px] pb-[48px] sm:pt-[160px] sm:pb-[150px] px-[24px] sm:px-[87px] flex flex-col gap-[70px] items-center cursor-pointer;
+    @apply relative bg-very-dark-blue py-[48px] sm:pt-[160px] sm:pb-[150px] px-[24px] sm:px-[87px] flex flex-col gap-[70px] items-center cursor-pointer;
+}
+
+.se-slider--mobile {
+    @apply sm:hidden;
+}
+
+.se-slider--desktop {
+    @apply hidden sm:block;
 }
 
 .se-slider__overlay {
@@ -11,7 +19,7 @@
 }
 
 .se-slider__header-divider {
-    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[28px] sm:-ml-[73px];
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[32px] sm:-ml-[73px];
 }
 
 .se-slider__header-title {
@@ -39,7 +47,7 @@
 }
 
 .se-slider__slides {
-    @apply relative z-10 w-full max-w-[414px] sm:max-w-[1266px] flex flex-col gap-[26px] sm:grid sm:gap-0;
+    @apply relative z-10 w-full max-w-[414px] sm:max-w-[1266px] flex flex-col gap-[48px] sm:grid sm:gap-0;
 }
 
 .se-slider__slide {

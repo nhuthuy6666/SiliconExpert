@@ -1,10 +1,25 @@
 <footer id="colophon" class="site-footer">
 	<div class="footer-content">
 		<img class="footer-logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/logo.svg" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" />
-
+		<a class="get-started-button-mobile" href="#">
+			<div class="text-container">
+				<span class="get-started-text-old">Get Started</span>
+				<span class="get-started-text-new">Get Started</span>
+			</div>
+			<div class="icon-container">
+				<div class="arrow-container">
+					<div class="arrow-old">
+						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/vector.svg" alt="">
+					</div>
+					<div class="arrow-new">
+						<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/vector.svg" alt="">
+					</div>
+				</div>
+			</div>
+		</a>
 		<div class="footer-columns">
 			<div class="footer-column">
-				<div class="flex flex-col gap-[16px]">
+				<div class="footer-items">
 					<p class="footer-column-title">Solutions</p>
 					<div class="footer-column-items">
 						<p class="footer-link">Engineering</p>
@@ -13,7 +28,7 @@
 						<p class="footer-link">Solutions by Industry</p>
 					</div>
 				</div>
-				<div class="flex flex-col gap-[16px]">
+				<div class="footer-items">
 					<p class="footer-column-title">Services</p>
 					<div class="footer-column-items">
 						<p class="footer-link">Professional</p>
@@ -22,7 +37,7 @@
 			</div>
 
 			<div class="footer-column">
-				<div class="flex flex-col gap-[16px]">
+				<div class="footer-items">
 					<p class="footer-column-title">Products</p>
 					<div class="footer-column-items">
 						<p class="footer-link">Part Search</p>
@@ -38,7 +53,7 @@
 			</div>
 
 			<div class="footer-column">
-				<div class="flex flex-col gap-[16px]">
+				<div class="footer-items">
 					<p class="footer-column-title">Partner Integrations</p>
 					<div class="footer-column-items">
 						<p class="footer-link">EDA</p>
@@ -51,7 +66,7 @@
 						<p class="footer-link">Become a Partner</p>
 					</div>
 				</div>
-				<div class="flex flex-col gap-[16px]">
+				<div class="footer-items">
 					<p class="footer-column-title">Resources</p>
 					<div class="footer-column-items">
 						<p class="footer-link">Blogs</p>
@@ -65,7 +80,7 @@
 			</div>
 
 			<div class="footer-column footer-column--cta">
-				<div class="flex flex-col gap-[16px]">
+				<div class="footer-items">
 					<p class="footer-column-title">Company</p>
 					<div class="footer-column-items">
 						<p class="footer-link">About SE</p>
