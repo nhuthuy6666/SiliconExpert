@@ -19,6 +19,12 @@ if (function_exists('acf_add_options_page')) {
 	
 	// Sub-page: Header Settings
 	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Header Settings',
+		'menu_title'	=> 'Header',
+		'menu_slug' 	=> 'theme-header-settings',
+		'parent_slug'	=> 'theme-settings',
+	));
+	acf_add_options_sub_page(array(
 		'page_title' 	=> 'Footer Settings',
 		'menu_title'	=> 'Footer',
 		'menu_slug' 	=> 'theme-footer-settings',
@@ -31,6 +37,57 @@ if (function_exists('acf_add_options_page')) {
  */
 
 if (function_exists('acf_add_local_field_group')) {
+    // Header Settings
+    acf_add_local_field_group(array(
+        'key' => 'group_theme_header',
+        'title' => 'Header Settings',
+        'fields' => array(
+            array(
+                'key' => 'field_header_logo',
+                'label' => 'Header Logo',
+                'name' => 'header_logo',
+                'type' => 'image',
+                'return_format' => 'url',
+            ),
+            array(
+                'key' => 'field_header_login_text',
+                'label' => 'Login Button Text',
+                'name' => 'header_login_text',
+                'type' => 'text',
+                'default_value' => 'Login',
+            ),
+            array(
+                'key' => 'field_header_login_link',
+                'label' => 'Login Button Link',
+                'name' => 'header_login_link',
+                'type' => 'url',
+                'default_value' => '',
+            ),
+            array(
+                'key' => 'field_header_get_started_text',
+                'label' => 'Get Started Button Text',
+                'name' => 'header_get_started_text',
+                'type' => 'text',
+                'default_value' => 'Get Started',
+            ),
+            array(
+                'key' => 'field_header_get_started_link',
+                'label' => 'Get Started Button Link',
+                'name' => 'header_get_started_link',
+                'type' => 'url',
+                'default_value' => '',
+            ),
+        ),
+        'location' => array(
+            array(
+                array(
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'theme-header-settings',
+                ),
+            ),
+        ),
+    ));
 	acf_add_local_field_group(array(
 		'key' => 'group_theme_footer',
 		'title' => 'Footer Settings',

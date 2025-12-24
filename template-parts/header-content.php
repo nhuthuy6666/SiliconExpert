@@ -6,11 +6,15 @@
  * @since 1.0.0
  */
 ?>
-	<header id="masthead" class="site-header" x-data="{ activeMenu: null, showSearchPopover: false, showMobileMenu: false, searchTermValue: '', searchTermActive: false }" x-init="$watch('showMobileMenu', value => document.body.classList.toggle('no-scroll', value))" :class="{ 'has-popover-open': (showSearchPopover || showMobileMenu || activeMenu !== null) }" @mouseleave="if (window.matchMedia('(hover: hover)').matches) { activeMenu = null; showSearchPopover = false; searchTermValue = ''; searchTermActive = false }">
+	<header id="masthead" class="site-header <?php echo is_singular('blog') ? 'header-dark' : ''; ?>" x-data="{ activeMenu: null, showSearchPopover: false, showMobileMenu: false, searchTermValue: '', searchTermActive: false }" x-init="$watch('showMobileMenu', value => document.body.classList.toggle('no-scroll', value))" :class="{ 'has-popover-open': (showSearchPopover || showMobileMenu || activeMenu !== null) }" @mouseleave="if (window.matchMedia('(hover: hover)').matches) { activeMenu = null; showSearchPopover = false; searchTermValue = ''; searchTermActive = false }">
 	<div class="header">
 		<div class="logo">
+			<?php
+				$logo_url = function_exists('get_field') ? (string) get_field('header_logo', 'option') : '';
+				$logo_url = $logo_url !== '' ? $logo_url : (get_template_directory_uri() . '/assets/images/logo.svg');
+			?>
 			<a href="<?php echo esc_url(home_url('/')); ?>">
-				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.svg" alt="<?php bloginfo('name'); ?>">
+				<img src="<?php echo esc_url($logo_url); ?>" alt="<?php bloginfo('name'); ?>">
 			</a>
 		</div>
 		<nav class="menu">
@@ -55,14 +59,26 @@
 				<img src="<?php echo get_template_directory_uri(); ?>/assets/images/arrow.svg" alt="">
 			</div>
 			<div class="action-buttons">
-				<button class="group login-button">
+				<?php
+					$login_text = function_exists('get_field') ? (string) get_field('header_login_text', 'option') : '';
+					$login_text = $login_text !== '' ? $login_text : 'Login';
+					$login_link = function_exists('get_field') ? (string) get_field('header_login_link', 'option') : '';
+					$login_link = $login_link !== '' ? $login_link : '#';
+				?>
+				<a class="group login-button" href="<?php echo esc_url($login_link); ?>">
 					<span class="fill-layout"></span>
-					<p>Login</p>
-				</button>
-				<button class="get-started-button">
+					<p><?php echo esc_html($login_text); ?></p>
+				</a>
+				<?php
+					$get_started_text = function_exists('get_field') ? (string) get_field('header_get_started_text', 'option') : '';
+					$get_started_text = $get_started_text !== '' ? $get_started_text : 'Get Started';
+					$get_started_link = function_exists('get_field') ? (string) get_field('header_get_started_link', 'option') : '';
+					$get_started_link = $get_started_link !== '' ? $get_started_link : '#';
+				?>
+				<a class="get-started-button" href="<?php echo esc_url($get_started_link); ?>">
 					<div class="text-container">
-						<span class="get-started-text-old">Get Started</span>
-						<span class="get-started-text-new">Get Started</span>
+						<span class="get-started-text-old"><?php echo esc_html($get_started_text); ?></span>
+						<span class="get-started-text-new"><?php echo esc_html($get_started_text); ?></span>
 					</div>
 					<div class="icon-container">
 						<div class="arrow-container">
@@ -74,7 +90,7 @@
 							</div>
 						</div>
 					</div>
-				</button>
+				</a>
 			</div>
 		</div>
 	</div>

@@ -1,0 +1,14 @@
+{
+    "name": "acf/blog-footer",
+    "title": "Blog Footer",
+    "description": "Blog footer block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["blog footer"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+

@@ -1,3 +1,30 @@
+// Header theming for single blog page
+.site-header.header-dark {
+  .header {
+    a,
+    p {
+      @apply text-se-dark-navy !important;
+    }
+  }
+
+  &.has-popover-open {
+    .header {
+      a,
+      p {
+        @apply text-white !important;
+      }
+    }
+  }
+
+  // Image color treatment (exclude vector.svg from default filter)
+  .header img:not([src*="vector.svg"]) {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(16%) saturate(1394%) hue-rotate(169deg) brightness(91%) contrast(88%);
+  }
+  &.has-popover-open .header img {
+    filter: none !important;
+  }
+}
+
 .site-header {
     @apply absolute left-0 top-0 w-full z-50 px-[24px] py-[18px] sm:py-[16px] sm:px-[87px] flex items-center justify-center bg-transparent;
 }

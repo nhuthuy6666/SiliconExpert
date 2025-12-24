@@ -1,0 +1,14 @@
+{
+    "name": "acf/blog-banner",
+    "title": "Blog Banner",
+    "description": "Blog banner block",
+    "category": "custom-blocks",
+    "icon": "editor-ul",
+    "keywords": ["blog banner"],
+    "acf": {
+        "mode": "preview",
+        "renderCallback": "AcfBlockRenderCallback"
+    },
+    "align": "full"
+}
+
