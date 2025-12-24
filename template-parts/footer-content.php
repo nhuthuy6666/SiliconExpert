@@ -26,7 +26,12 @@
 		</a>
 		<div class="footer-columns">
 			<?php
-			$render_footer_grid = function ($grid) use ($get_started_link, $get_started_text) {
+			$grids = get_field('footer_grids', 'option');
+			$button_grid = get_field('button_grid', 'option') ?: '';
+			if ($button_grid === '' && !empty($grids) && is_array($grids)) {
+				$button_grid = $grids['button_grid'] ?? '';
+			}
+			$render_footer_grid = function ($grid, $show_button) use ($get_started_link, $get_started_text) {
 				if (empty($grid) || !is_array($grid)) {
 					return;
 				}
@@ -34,7 +39,6 @@
 				if (!is_array($columns)) {
 					$columns = array();
 				}
-				$show_button = !empty($grid['show_button']);
 				if (empty($columns) && !$show_button) {
 					return;
 				}
@@ -86,13 +90,14 @@
 				<?php
 			};
 
-			$grids = get_field('footer_grids', 'option');
 			if (!empty($grids) && is_array($grids)) {
 				foreach (array('grid1', 'grid2', 'grid3', 'grid4') as $grid_key) {
 					if (empty($grids[$grid_key]) || !is_array($grids[$grid_key])) {
 						continue;
 					}
-					$render_footer_grid($grids[$grid_key]);
+					$legacy_show_button = !empty($grids[$grid_key]['show_button']);
+					$show_button = ($button_grid === $grid_key) || ($button_grid === '' && $legacy_show_button);
+					$render_footer_grid($grids[$grid_key], $show_button);
 				}
 			}
 			?>

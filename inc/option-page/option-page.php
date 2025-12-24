@@ -451,6 +451,22 @@ if (function_exists('acf_add_local_field_group')) {
 				'default_value' => 'http://siliconexpert.local/',
 			),
 			array(
+				'key' => 'field_footer_button_grid',
+				'label' => 'Button Grid',
+				'name' => 'button_grid',
+				'type' => 'select',
+				'choices' => array(
+					'grid1' => 'Grid 1',
+					'grid2' => 'Grid 2',
+					'grid3' => 'Grid 3',
+					'grid4' => 'Grid 4',
+				),
+				'default_value' => 'grid4',
+				'allow_null' => 0,
+				'ui' => 1,
+				'return_format' => 'value',
+			),
+			array(
 				'key' => 'field_footer_columns_tab',
 				'label' => 'Footer Columns',
 				'name' => 'footer_columns_tab',
@@ -469,14 +485,6 @@ if (function_exists('acf_add_local_field_group')) {
 						'name' => 'grid1',
 						'type' => 'group',
 						'sub_fields' => array(
-							array(
-								'key' => 'field_footer_grid1_show_button',
-								'label' => 'Show Button In This Grid',
-								'name' => 'show_button',
-								'type' => 'true_false',
-								'ui' => 1,
-								'default_value' => 0,
-							),
 							array(
 								'key' => 'field_footer_grid1_columns',
 								'label' => 'Columns',
@@ -540,14 +548,6 @@ if (function_exists('acf_add_local_field_group')) {
 						'type' => 'group',
 						'sub_fields' => array(
 							array(
-								'key' => 'field_footer_grid2_show_button',
-								'label' => 'Show Button In This Grid',
-								'name' => 'show_button',
-								'type' => 'true_false',
-								'ui' => 1,
-								'default_value' => 0,
-							),
-							array(
 								'key' => 'field_footer_grid2_columns',
 								'label' => 'Columns',
 								'name' => 'columns',
@@ -610,14 +610,6 @@ if (function_exists('acf_add_local_field_group')) {
 						'type' => 'group',
 						'sub_fields' => array(
 							array(
-								'key' => 'field_footer_grid3_show_button',
-								'label' => 'Show Button In This Grid',
-								'name' => 'show_button',
-								'type' => 'true_false',
-								'ui' => 1,
-								'default_value' => 0,
-							),
-							array(
 								'key' => 'field_footer_grid3_columns',
 								'label' => 'Columns',
 								'name' => 'columns',
@@ -679,14 +671,6 @@ if (function_exists('acf_add_local_field_group')) {
 						'name' => 'grid4',
 						'type' => 'group',
 						'sub_fields' => array(
-							array(
-								'key' => 'field_footer_grid4_show_button',
-								'label' => 'Show Button In This Grid',
-								'name' => 'show_button',
-								'type' => 'true_false',
-								'ui' => 1,
-								'default_value' => 0,
-							),
 							array(
 								'key' => 'field_footer_grid4_columns',
 								'label' => 'Columns',
@@ -757,7 +741,7 @@ if (function_exists('acf_add_local_field_group')) {
 				'label' => 'Copyright Text',
 				'name' => 'footer_copyright',
 				'type' => 'text',
-				'default_value' => '© 2025 SiliconExpert. All Rights Reserved.',
+				'default_value' => ' 2025 SiliconExpert. All Rights Reserved.',
 			),
 			array(
 				'key' => 'field_footer_address',
@@ -827,62 +811,17 @@ if (is_admin()) {
 		}
 
 		$acf = $_POST['acf'];
-		$grids_field_key = 'field_footer_grids';
-		$grids = $acf[$grids_field_key] ?? null;
-		if (empty($grids) || !is_array($grids)) {
-			return;
-		}
-
-		$grid_map = array(
-			'field_footer_grid1' => array(
-				'show_button' => 'field_footer_grid1_show_button',
-				'columns' => 'field_footer_grid1_columns',
-			),
-			'field_footer_grid2' => array(
-				'show_button' => 'field_footer_grid2_show_button',
-				'columns' => 'field_footer_grid2_columns',
-			),
-			'field_footer_grid3' => array(
-				'show_button' => 'field_footer_grid3_show_button',
-				'columns' => 'field_footer_grid3_columns',
-			),
-			'field_footer_grid4' => array(
-				'show_button' => 'field_footer_grid4_show_button',
-				'columns' => 'field_footer_grid4_columns',
-			),
-		);
-
-		$enabled_show_button = array();
-		foreach ($grid_map as $grid_key => $keys) {
-			$grid = $grids[$grid_key] ?? null;
-			if (empty($grid) || !is_array($grid)) {
-				continue;
-			}
-			if (!empty($grid[$keys['show_button']])) {
-				$enabled_show_button[] = $keys['show_button'];
+		$button_grid = $acf['field_footer_button_grid'] ?? '';
+		if ($button_grid === '') {
+			$grids_field_key = 'field_footer_grids';
+			$grids = $acf[$grids_field_key] ?? null;
+			if (!empty($grids) && is_array($grids)) {
+				$button_grid = $grids['field_footer_button_grid'] ?? '';
 			}
 		}
-		if (count($enabled_show_button) > 1) {
-			foreach ($enabled_show_button as $field_key) {
-				acf_add_validation_error($field_key, 'Show Button can only be enabled in one grid.');
-			}
-		}
-
-		foreach ($grid_map as $grid_key => $keys) {
-			$grid = $grids[$grid_key] ?? null;
-			if (empty($grid) || !is_array($grid)) {
-				continue;
-			}
-
-			$show_button = !empty($grid[$keys['show_button']]);
-			$columns = $grid[$keys['columns']] ?? array();
-			if (!is_array($columns)) {
-				$columns = array();
-			}
-
-			if ($show_button && count($columns) > 1) {
-				acf_add_validation_error($keys['columns'], 'If "Show Button In This Grid" is enabled, this grid can only have 1 column.');
-			}
+		$allowed = array('', 'grid1', 'grid2', 'grid3', 'grid4');
+		if (!in_array($button_grid, $allowed, true)) {
+			acf_add_validation_error('field_footer_button_grid', 'Invalid Button Grid selection.');
 		}
 	});
 }
