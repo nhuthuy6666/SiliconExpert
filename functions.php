@@ -26,4 +26,6 @@ require_once get_template_directory() . '/inc/enqueue/enqueue.php';
 // Load option pages
 require_once get_template_directory() . '/inc/option-page/option-page.php';
 
+// Load menu popover meta fields
+require_once get_template_directory() . '/inc/menu-popover-meta/menu-popover-meta.php';
 
