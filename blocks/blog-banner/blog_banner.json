@@ -1,0 +1,57 @@
+{
+    "key": "group_blog_banner",
+    "title": "Blog Banner",
+    "fields": [
+        {
+            "key": "field_blog_banner_background",
+            "label": "Blog Banner Background",
+            "name": "blog_banner_background",
+            "type": "image",
+            "required": 0,
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all"
+        },
+        {
+            "key": "field_blog_banner_text",
+            "label": "Blog Banner Text",
+            "name": "blog_banner_text",
+            "type": "text",
+            "required": 1,
+            "default_value": "Subscribe"
+        },
+        {
+            "key": "field_blog_banner_h6",
+            "label": "Blog Banner H6",
+            "name": "blog_banner_h6",
+            "type": "text",
+            "required": 1,
+            "default_value": "Get the latest insights, right to your inbox."
+        },
+        {
+            "key": "field_blog_banner_button_text",
+            "label": "Blog Banner Button Text",
+            "name": "blog_banner_button_text",
+            "type": "text",
+            "required": 1,
+            "default_value": "Primary CTA"
+        },
+        {
+            "key": "field_blog_banner_button_url",
+            "label": "Blog Banner Button URL",
+            "name": "blog_banner_button_url",
+            "type": "url",
+            "required": 1,
+            "default_value": "#"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/blog-banner"
+            }
+        ]
+    ]
+}

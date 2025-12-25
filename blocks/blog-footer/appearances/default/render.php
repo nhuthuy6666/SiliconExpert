@@ -1,26 +1,29 @@
-<div class="bg-white text-very-dark-blue flex flex-col justify-center items-center">
-    <div class="w-full max-w-[1266px] flex flex-col max-w-[836px] py-[64px] gap-[64px]">
-        <div class="w-full max-w-[836px] border-t-[1px] border-se-dark-navy pt-[16px] flex flex-row justify-between items-center">
-            <div class="flex flex-row gap-[16px] justify-center items-center">
-                <p class="text-[14px] font-[400]">Share</p>
-                <div class="flex flex-row gap-[8px] p-[8px]">
-                    <div class="flex flex-row max-h-[24px] gap-[16px]">
-                        <div class="w-[24px] h-[24px] flex justify-center items-center">
-                            <img class="w-[16.51px] h-[18.01px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/X.svg" alt=""/>
-                        </div>
-                        <div class="w-[24px] h-[24px] flex justify-center items-center">
-                            <img class="w-[16.51px] h-[18.01px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg" alt=""/>
-                        </div>
-                        <div class="w-[24px] h-[24px] flex justify-center items-center">
-                            <img class="w-[16.51px] h-[18.01px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedin.svg" alt=""/>
-                        </div>
+<?php
+?>
+
+<div class="blog-footer">
+    <div class="blog-footer__inner">
+        <div class="blog-footer__bar">
+            <div class="blog-footer__share">
+                <p class="blog-footer__share-label">Share</p>
+                <div class="blog-footer__share-icons-wrap">
+                    <div class="blog-footer__share-icons">
+                        <a class="blog-footer__share-icon" href="<?php echo esc_url( (string) ( $data->blog_footer_x_link ?? '#' ) ); ?>" target="_blank" rel="noopener">
+                            <img class="blog-footer__share-icon-img blog-footer__share-icon-img--x" src="<?php echo get_template_directory_uri(); ?>/assets/images/X.svg" alt="X"/>
+                        </a>
+                        <a class="blog-footer__share-icon" href="<?php echo esc_url( (string) ( $data->blog_footer_facebook_link ?? '#' ) ); ?>" target="_blank" rel="noopener">
+                            <img class="blog-footer__share-icon-img blog-footer__share-icon-img--facebook" src="<?php echo get_template_directory_uri(); ?>/assets/images/facebook.svg" alt="Facebook"/>
+                        </a>
+                        <a class="blog-footer__share-icon" href="<?php echo esc_url( (string) ( $data->blog_footer_linkedin_link ?? '#' ) ); ?>" target="_blank" rel="noopener">
+                            <img class="blog-footer__share-icon-img blog-footer__share-icon-img--linkedin" src="<?php echo get_template_directory_uri(); ?>/assets/images/linkedin.svg" alt="LinkedIn"/>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-row gap-[4px] justify-center items-center">
-                <p class="text-[14px] font-[500]">Download</p>
-                <div class="w-[20px] h-[20px] flex justify-center items-center">
-                    <img class="" src="<?php echo get_template_directory_uri(); ?>/assets/images/download.svg" alt=""/>
+            <div class="blog-footer__download">
+                <p class="blog-footer__download-label">Download</p>
+                <div class="blog-footer__download-icon">
+                    <img class="blog-footer__download-icon-img" src="<?php echo get_template_directory_uri(); ?>/assets/images/download.svg" alt=""/>
                 </div>
             </div>
         </div>

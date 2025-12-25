@@ -19,9 +19,9 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 }
 ?>
 
-<main id="primary" class="site-main bg-white text-very-dark-blue flex flex-col justify-center items-center">
-	<div class="w-full max-w-[1266px] pt-[165px] pb-[96px] py-[302px] flex flex-col justify-center items-center">
-        <div class="flex flex-col gap-[16px] w-full max-w-[836px] justify-start">
+<main id="primary" class="site-main bg-white flex flex-col justify-center items-center">
+	<div class="w-full text-very-dark-blue max-w-[414px] sm:max-w-[1266px] pt-[132px] pb-[48px] px-[24px] sm:pt-[165px] sm:pb-[96px] sm:px-[302px] flex flex-col justify-center items-center">
+        <div class="flex flex-col gap-[16px] w-full max-w-[366px] sm:max-w-[836px] justify-center sm:justify-start">
             <div class="flex flex-row gap-[16px]">
                 <p class="text-[12px] font-[400] text-se-dark-navy">Press Release</p>
                 <div class="flex flex-row gap-[4px] justify-center items-center">
@@ -41,9 +41,9 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 			</p>
         </div>
     </div>
-    <div class="flex flex-col w-full justify-center items-center max-w-[1266px] pb-[140px]">
-        <div class="w-full py-[21.5px] flex flex-row justify-between items-center">
-            <div class="flex flex-row gap-[8px]">
+    <div class="flex flex-col w-full justify-center items-center text-very-dark-blue max-w-[414px] sm:max-w-[1266px] pb-[48px] sm:pb-[140px]">
+        <div class="w-full py-[12px] sm:py-[21.5px] flex flex-row justify-between items-center">
+            <div class="hidden sm:flex flex-row gap-[8px]">
                 <p class="text-[14px] font-[500]">Resources</p>
                 <p class="text-[14px] font-[500]">></p>
                 <p class="text-[14px] font-[500]">Category</p>
@@ -52,7 +52,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 					<?php echo esc_html($blog_name ?: get_the_title($post_id)); ?>
 				</p>
             </div>
-            <div class="flex flex-row w-[297px] justify-between items-center">
+            <div class="flex flex-row w-full max-w-[414px] sm:max-w-[297px] max-sm:px-[24px] justify-between items-center">
                 <div class="flex flex-row gap-[16px] items-center">
                     <p class="text-[14px] font-[400]">Share</p>
                     <div class="flex flex-row gap-[8px] p-[8px]">
@@ -77,12 +77,12 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
                 </div>
             </div>
         </div>
-        <img class="w-full max-h-[600px]" src="<?php echo get_template_directory_uri(); ?>/assets/images/InsightCard.png" />
-		<div class="w-full max-w-[836px] mt-[64px]">
+        <img class="w-full h-[232.88px] sm:h-[600px] object-cover" src="<?php echo get_template_directory_uri(); ?>/assets/images/InsightCard.png" />
+		<div class="w-full max-sm:px-[24px] max-w-[366px] sm:max-w-[836px] mt-[44px] sm:mt-[64px]">
 			<?php the_content(); ?>
 		</div>
     </div>
-    <div class="w-full max-w-[1266px] flex flex-col pt-[64px] pb-[127px] gap-[48px]">
+    <div class="w-full max-w-[414px] max-sm:px-[24px] sm:max-w-[1266px] text-very-dark-blue flex flex-col py-[44px] sm:pt-[64px] sm:pb-[127px] gap-[32px] sm:gap-[48px]">
         <div class="flex flex-row justify-between items-center">
             <div class="flex flex-col gap-[40px]">
                 <div class="flex flex-row justify-center items-center">
@@ -96,9 +96,9 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
                 <p class="text-[14px] font-[500]">Secondary</p>
             </div>
         </div>
-        <div class="flex flex-row gap-[24px]">
+        <div class="flex flex-col sm:flex-row gap-[40px] sm:gap-[24px]">
             <div class="w-full max-w-[406px] flex flex-col gap-[16px]">
-                <img class="w-full max-w-[406px] h-[221px] rounded-[6px]" src=""/>
+                <img class="w-full max-w-[366px] sm:max-w-[406px] h-[198.81px] sm:h-[221px] rounded-[6px]" src=""/>
                 <div class="flex flex-col gap-[8px]">
                     <p class="text-[16px] font-[500]">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor</p>
                     <div class="flex flex-row gap-[16px]">

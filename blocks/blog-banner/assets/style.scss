@@ -1,0 +1,95 @@
+ .blog-banner {
+     @apply bg-very-dark-blue text-very-dark-blue flex flex-col justify-center items-center rounded-[6px];
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+ 
+     .blog-banner__inner {
+         @apply w-full max-w-[414px] sm:max-w-[1266px] rounded-[6px] py-[38px] sm:py-[40px] px-[24px] sm:px-[43px];
+     }
+ 
+     .blog-banner__content {
+         @apply w-full max-w-[749] flex flex-col sm:flex-row justify-between items-start sm:items-end gap-[32px] sm:gap-[115px];
+     }
+ 
+     .blog-banner__text {
+         @apply flex flex-col w-full max-w-[470px] gap-[8px];
+     }
+ 
+     .blog-banner__eyebrow {
+         @apply text-white text-[14px] font-[500];
+     }
+ 
+     .blog-banner__heading {
+         @apply text-white text-[24px] font-[500];
+     }
+ 
+     .get-started-button {
+         @apply relative overflow-hidden w-[164px] h-[48px] rounded-[4px] flex flex-row gap-[16px] justify-end items-center pl-[24px] py-[4px] pr-[4px] bg-se-yellow;
+ 
+         .text-container {
+             @apply relative h-[48px] overflow-hidden flex items-center;
+ 
+             span {
+                 @apply block text-[14px] font-[500] text-se-dark-navy transition-transform duration-300 ease-out;
+             }
+ 
+             .get-started-text-old {
+                 @apply translate-y-0;
+             }
+ 
+             .get-started-text-new {
+                 @apply absolute left-0 top-[48px];
+             }
+         }
+ 
+         .icon-container {
+             @apply relative overflow-hidden w-[40px] h-[40px] bg-se-dark-navy rounded-[4px] flex justify-center items-center;
+ 
+             .arrow-container {
+                 @apply relative w-[20px] h-[20px] flex justify-center items-center overflow-hidden;
+             }
+ 
+             .arrow-old,
+             .arrow-new {
+                 @apply w-[20px] h-[20px] flex justify-center items-center transition-transform duration-300 ease-out;
+             }
+ 
+             .arrow-old img,
+             .arrow-new img {
+                 @apply w-[11.25px] h-[11.25px];
+             }
+ 
+             .arrow-old {
+                 @apply translate-x-0 translate-y-0;
+             }
+ 
+             .arrow-new {
+                 @apply absolute -translate-x-[32px] translate-y-[9.8px];
+             }
+         }
+ 
+         &:hover {
+             .text-container {
+                 .get-started-text-old {
+                     @apply -translate-y-[48px];
+                 }
+ 
+                 .get-started-text-new {
+                     @apply -translate-y-[34px];
+                 }
+             }
+ 
+             .icon-container {
+                 .arrow-old {
+                     @apply translate-x-[32px] -translate-y-[9.8px];
+                 }
+ 
+                 .arrow-new {
+                     @apply translate-x-0 translate-y-0;
+                 }
+             }
+         }
+     }
+ }
+

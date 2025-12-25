@@ -1,0 +1,39 @@
+{
+    "key": "group_blog_footer",
+    "title": "Blog Footer",
+    "fields": [
+        {
+            "key": "field_blog_footer_x_link",
+            "label": "Blog Footer X Link",
+            "name": "blog_footer_x_link",
+            "type": "url",
+            "required": 1,
+            "default_value": "#"
+        },
+        {
+            "key": "field_blog_footer_facebook_link",
+            "label": "Blog Footer Facebook Link",
+            "name": "blog_footer_facebook_link",
+            "type": "url",
+            "required": 1,
+            "default_value": "#"
+        },
+        {
+            "key": "field_blog_footer_linkedin_link",
+            "label": "Blog Footer LinkedIn Link",
+            "name": "blog_footer_linkedin_link",
+            "type": "url",
+            "required": 1,
+            "default_value": "#"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/blog-footer"
+            }
+        ]
+    ]
+}
