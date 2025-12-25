@@ -78,7 +78,7 @@
                 </a>
             </div>
             <div class="se-block-resources__main-meta">
-                <p class="se-block-resources__headline"><?php echo esc_html( (string) $main_title ); ?></p>
+                <a class="se-block-resources__headline" href="<?php echo esc_url( $main_permalink ); ?>"><?php echo esc_html( (string) $main_title ); ?></a>
                 <div class="se-block-resources__meta-row">
                     <p class="se-block-resources__meta-text"><?php echo esc_html( (string) $main_date ); ?></p>
                     <p class="se-block-resources__meta-text">Press Release</p>
@@ -112,7 +112,7 @@
                         </a>
                     </div>
                     <div class="se-block-resources__card-meta">
-                        <p class="se-block-resources__headline"><?php echo esc_html( (string) $side_title ); ?></p>
+                        <a class="se-block-resources__headline" href="<?php echo esc_url( $side_permalink ); ?>"><?php echo esc_html( (string) $side_title ); ?></a>
                         <div class="se-block-resources__meta-row">
                             <p class="se-block-resources__meta-text"><?php echo esc_html( (string) $side_date ); ?></p>
                             <p class="se-block-resources__meta-text">Press Release</p>

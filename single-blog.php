@@ -41,7 +41,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 			</p>
         </div>
     </div>
-    <div class="flex flex-col w-full justify-center items-center text-very-dark-blue max-w-[414px] lg:max-w-[1266px] pb-[48px] lg:pb-[140px] px-[24px] lg:px-[87px]">
+    <div class="flex flex-col w-full justify-center items-center text-very-dark-blue max-w-[414px] lg:max-w-[1266px] pb-[48px] lg:pb-[140px] px-[24px]">
         <div class="w-full py-[12px] lg:py-[21.5px] flex flex-row justify-between items-center">
             <div class="hidden lg:flex flex-row gap-[8px]">
                 <p class="text-[14px] font-[500]">Resources</p>
@@ -77,7 +77,13 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
                 </div>
             </div>
         </div>
-        <img class="w-full h-[232.88px] lg:h-[600px] object-cover" src="<?php echo get_template_directory_uri(); ?>/assets/images/InsightCard.png" />
+		<?php
+			$hero_image_url = (string) (get_the_post_thumbnail_url($post_id, 'full') ?: '');
+			if ($hero_image_url === '') {
+				$hero_image_url = (string) get_template_directory_uri() . '/assets/images/InsightCard.png';
+			}
+		?>
+		<img class="w-full h-[232.88px] lg:h-[600px] object-cover" src="<?php echo esc_url($hero_image_url); ?>" alt="" />
 		<div class="w-full max-lg:px-[24px] max-w-[366px] lg:max-w-[836px] mt-[44px] lg:mt-[64px]">
 			<?php the_content(); ?>
 		</div>
@@ -96,7 +102,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 		);
 		$related_posts = $related_query->posts;
 	?>
-    <div class="w-full max-w-[414px] px-[24px] lg:px-[87px] lg:max-w-[1266px] text-very-dark-blue flex flex-col py-[44px] lg:pt-[64px] lg:pb-[127px] gap-[32px] lg:gap-[48px]">
+    <div class="w-full max-w-[414px] px-[24px] lg:max-w-[1266px] text-very-dark-blue flex flex-col py-[44px] lg:pt-[64px] lg:pb-[127px] gap-[32px] lg:gap-[48px]">
         <div class="flex flex-row justify-between items-center">
             <div class="flex flex-col gap-[40px]">
                 <div class="flex flex-row justify-center items-center">
