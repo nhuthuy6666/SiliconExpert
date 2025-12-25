@@ -1,28 +1,28 @@
 .hero-block{
-    @apply flex items-center justify-center px-[24px] lg:px-[87px] flex flex-col pt-[80px];
+    @apply flex items-center justify-center px-[24px] sm:px-[87px] flex flex-col pt-[80px];
     @apply bg-cover bg-center bg-no-repeat bg-se-dark-navy;
 }
 .banner-container {
-    @apply w-full max-w-[414px] gap-[40px] lg:gap-[24px] lg:gap-[0px] lg:max-w-[1266px] mt-[19.23px] pt-[65.77px] pb-[87.72px] flex flex-col;
+    @apply w-full max-w-[414px] gap-[40px] xl:gap-[24px] sm:max-w-[1266px] mt-[19.23px] pt-[65.77px] pb-[87.72px] flex flex-col;
 
     .banner-title {
         @apply text-[20px] font-[500] text-se-yellow flex justify-start items-center;
     }
 
     .banner-heading-wrapper {
-        @apply w-[366px] lg:w-[796px] flex justify-start items-center lg:mt-[15px];
+        @apply w-[366px] sm:w-[796px] flex justify-start items-center sm:mt-[15px];
 
         h1 {
-            @apply text-[64px] font-[500] lg:mr-[142px] leading-[1.1];
+            @apply text-[64px] font-[500] sm:mr-[142px] leading-[1.1];
         }
     }
 
     .banner-subheading {
-        @apply w-full lg:w-[560px] flex justify-start items-center leading-tight text-[20px] font-[500] text-[#FFFFFF] font-[400] mt-[32px];
+        @apply w-full sm:w-[560px] flex justify-start items-center leading-tight text-[20px] font-[500] text-[#FFFFFF] font-[400] mt-[32px];
     }
 
     .banner-buttons {
-        @apply flex flex-col lg:flex-row justify-start items-start lg:items-center gap-[24px] mt-[40px] lg:mt-[232px];
+        @apply flex flex-col sm:flex-row justify-start items-start sm:items-center gap-[24px] mt-[40px] lg:mt-[232px];
 
         .banner-button-primary {
             @apply relative overflow-hidden bg-se-yellow text-se-dark-navy py-[19px] px-[40px] w-[195px] h-[56px] flex flex-row items-center justify-between pr-[4px] rounded-[4px];
@@ -113,21 +113,24 @@
     }
 }
 .hero-container {
-    @apply w-full lg:px-[0px] max-w-[414px] lg:max-w-[1266px] mt-[12.28px] pt-[32px];
+  @apply w-full max-w-[414px] sm:max-w-[1266px] mt-[12.28px] pt-[32px];
 
-    .hero-inner {
-        @apply lg:h-[348px] py-[48px] lg:py-[80px] flex flex-col lg:flex-row gap-[32px] lg:justify-between lg:items-center;
+  .hero-inner {
+    @apply py-[48px] sm:py-[80px] gap-[32px] grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4;
+  }
 
-        .hero-item {
-            @apply flex flex-col gap-[16px];
+  .hero-item {
+    @apply flex flex-col gap-[16px];
 
-            h3 {
-                @apply text-[40px] font-[400] leading-[1.25] drop-shadow-[0_0_5px_#2E7BFF];
-            }
-
-            p {
-                @apply w-[250px] h-[72px] text-[16px] font-[400];
-            }
-        }
+    h3 {
+      @apply text-[40px] font-[400] leading-[1.25] drop-shadow-[0_0_5px_#2E7BFF];
     }
+
+    p {
+      @apply w-[250px] h-[72px] text-[16px] font-[400];
+    }
+  }
 }
+
+
+

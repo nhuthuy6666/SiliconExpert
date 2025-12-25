@@ -20,8 +20,8 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 ?>
 
 <main id="primary" class="site-main bg-white flex flex-col justify-center items-center">
-	<div class="w-full text-very-dark-blue max-w-[414px] lg:max-w-[1266px] pt-[132px] pb-[48px] px-[24px] lg:pt-[165px] lg:pb-[96px] lg:px-[302px] flex flex-col justify-center items-center">
-        <div class="flex flex-col gap-[16px] w-full max-w-[366px] lg:max-w-[836px] justify-center lg:justify-start">
+	<div class="w-full text-very-dark-blue max-w-[414px] sm:max-w-[1266px] pt-[132px] pb-[48px] px-[24px] sm:pt-[165px] sm:pb-[96px] sm:px-[302px] flex flex-col justify-center items-center">
+        <div class="flex flex-col gap-[16px] w-full max-w-[366px] sm:max-w-[836px] justify-center sm:justify-start">
             <div class="flex flex-row gap-[16px]">
                 <p class="text-[12px] font-[400] text-se-dark-navy">Press Release</p>
                 <div class="flex flex-row gap-[4px] justify-center items-center">
@@ -41,9 +41,9 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 			</p>
         </div>
     </div>
-    <div class="flex flex-col w-full justify-center items-center text-very-dark-blue max-w-[414px] lg:max-w-[1266px] pb-[48px] lg:pb-[140px] px-[24px]">
-        <div class="w-full py-[12px] lg:py-[21.5px] flex flex-row justify-between items-center">
-            <div class="hidden lg:flex flex-row gap-[8px]">
+    <div class="flex flex-col w-full justify-center items-center text-very-dark-blue max-w-[414px] sm:max-w-[1266px] pb-[48px] sm:pb-[140px] px-[24px]">
+        <div class="w-full py-[12px] sm:py-[21.5px] flex flex-row justify-between items-center">
+            <div class="hidden sm:flex flex-row gap-[8px]">
                 <p class="text-[14px] font-[500]">Resources</p>
                 <p class="text-[14px] font-[500]">></p>
                 <p class="text-[14px] font-[500]">Category</p>
@@ -52,7 +52,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 					<?php echo esc_html($blog_name ?: get_the_title($post_id)); ?>
 				</p>
             </div>
-            <div class="flex flex-row w-full max-w-[414px] lg:max-w-[297px] max-lg:px-[24px] justify-between items-center">
+            <div class="flex flex-row w-full max-w-[414px] sm:max-w-[297px] max-sm:px-[24px] justify-between items-center">
                 <div class="flex flex-row gap-[16px] items-center">
                     <p class="text-[14px] font-[400]">Share</p>
                     <div class="flex flex-row gap-[8px] p-[8px]">
@@ -83,8 +83,8 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 				$hero_image_url = (string) get_template_directory_uri() . '/assets/images/InsightCard.png';
 			}
 		?>
-		<img class="w-full h-[232.88px] lg:h-[600px] object-cover" src="<?php echo esc_url($hero_image_url); ?>" alt="" />
-		<div class="w-full max-lg:px-[24px] max-w-[366px] lg:max-w-[836px] mt-[44px] lg:mt-[64px]">
+		<img class="w-full h-[232.88px] sm:h-[600px] object-cover" src="<?php echo esc_url($hero_image_url); ?>" alt="" />
+		<div class="w-full max-sm:px-[24px] max-w-[366px] sm:max-w-[836px] mt-[44px] sm:mt-[64px]">
 			<?php the_content(); ?>
 		</div>
     </div>
@@ -102,7 +102,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 		);
 		$related_posts = $related_query->posts;
 	?>
-    <div class="w-full max-w-[414px] px-[24px] lg:max-w-[1266px] text-very-dark-blue flex flex-col py-[44px] lg:pt-[64px] lg:pb-[127px] gap-[32px] lg:gap-[48px]">
+    <div class="w-full max-w-[414px] px-[24px] sm:max-w-[1266px] text-very-dark-blue flex flex-col py-[44px] sm:pt-[64px] sm:pb-[127px] gap-[32px] sm:gap-[48px]">
         <div class="flex flex-row justify-between items-center">
             <div class="flex flex-col gap-[40px]">
                 <div class="flex flex-row justify-center items-center">
@@ -116,7 +116,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
                 <p class="text-[14px] font-[500]">Secondary</p>
             </div>
         </div>
-        <div class="flex flex-col lg:flex-row gap-[40px] lg:gap-[24px]">
+        <div class="flex flex-col sm:flex-row gap-[40px] sm:gap-[24px]">
 			<?php foreach ((array) $related_posts as $related_post) : ?>
 				<?php
 					$related_post_id = $related_post instanceof WP_Post ? (int) $related_post->ID : 0;
@@ -127,7 +127,7 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 					$related_thumb = $related_post_id ? (string) (get_the_post_thumbnail_url($related_post_id, 'full') ?: '') : '';
 				?>
 				<a class="w-full max-w-[406px] flex flex-col gap-[16px]" href="<?php echo esc_url($related_permalink); ?>">
-					<img class="w-full max-w-[366px] lg:max-w-[406px] h-[198.81px] lg:h-[221px] rounded-[6px] object-cover" src="<?php echo esc_url($related_thumb); ?>" alt=""/>
+					<img class="w-full max-w-[366px] sm:max-w-[406px] h-[198.81px] sm:h-[221px] rounded-[6px] object-cover" src="<?php echo esc_url($related_thumb); ?>" alt=""/>
 					<div class="flex flex-col gap-[8px]">
 						<p class="text-[16px] font-[500]"><?php echo esc_html($related_title); ?></p>
 						<div class="flex flex-row gap-[16px]">
@@ -242,5 +242,6 @@ if (is_array($primary_terms) && !empty($primary_terms) && $primary_terms[0] inst
 
 <?php
 get_footer();
+
 
 
