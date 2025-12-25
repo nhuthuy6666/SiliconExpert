@@ -1,6 +1,6 @@
 
 .se-marquee {
-    @apply relative bg-very-dark-blue py-[48px] sm:pt-[96px] sm:pb-[76px] flex flex-col items-center gap-[32px] sm:gap-[44px];
+    @apply relative bg-very-dark-blue py-[48px] lg:pt-[96px] lg:pb-[76px] flex flex-col items-center gap-[32px] lg:gap-[44px];
 }
 
 .se-marquee__overlay {
@@ -16,11 +16,11 @@
 }
 
 .se-marquee__header {
-    @apply relative z-10 w-full max-w-[414px] sm:max-w-[1266px] flex flex-row items-center sm:gap-[40px] mx-[24px] sm:mx-[87px];
+    @apply relative z-10 w-full max-w-[414px] lg:max-w-[1266px] flex flex-row items-center lg:gap-[40px] mx-[24px] lg:mx-[87px];
 }
 
 .se-marquee__divider {
-    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[8px] sm:-ml-[73px];
+    @apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[8px] lg:-ml-[73px];
 }
 
 .se-marquee__title {
@@ -44,9 +44,10 @@
 }
 
 .se-marquee__item {
-    @apply w-[234px] sm:w-[260px] h-[62px] px-[19.76px] py-[1.94px] shrink-0;
+    @apply w-[234px] lg:w-[260px] h-[62px] px-[19.76px] py-[1.94px] shrink-0;
 }
 
 .se-marquee__img {
-    @apply w-[194.5px] h-[29.06px] sm:w-[220.48px] sm:h-[58.13px] object-scale-down;
+    @apply w-[194.5px] h-[29.06px] lg:w-[220.48px] lg:h-[58.13px] object-scale-down;
 }
+

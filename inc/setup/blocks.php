@@ -102,6 +102,9 @@ function siliconexpert_load_block_field_groups() {
 	}
 
 	foreach ($block_folders as $block_folder) {
+		if (basename($block_folder) === 'block-resources') {
+			continue;
+		}
 		$json_files = glob($block_folder . '/*.json');
 		if (!$json_files) {
 			continue;
@@ -128,6 +131,24 @@ function siliconexpert_load_block_field_groups() {
 	}
 }
 add_action('acf/init', 'siliconexpert_load_block_field_groups', 5);
+
+function siliconexpert_cleanup_block_resources_field_group() {
+	if (!function_exists('acf_get_field_group') || !function_exists('acf_delete_field_group')) {
+		return;
+	}
+
+	if (get_option('siliconexpert_cleanup_group_block_resources_done')) {
+		return;
+	}
+
+	$field_group = acf_get_field_group('group_block_resources');
+	if (is_array($field_group) && !empty($field_group['key'])) {
+		acf_delete_field_group($field_group['key']);
+	}
+
+	update_option('siliconexpert_cleanup_group_block_resources_done', 1);
+}
+add_action('acf/init', 'siliconexpert_cleanup_block_resources_field_group', 6);
 
 add_action('acf/init', 'siliconexpert_register_blocks', 10);
 

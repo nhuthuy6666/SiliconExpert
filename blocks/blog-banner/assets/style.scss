@@ -5,11 +5,11 @@
      background-repeat: no-repeat;
  
      .blog-banner__inner {
-         @apply w-full max-w-[414px] sm:max-w-[1266px] rounded-[6px] py-[38px] sm:py-[40px] px-[24px] sm:px-[43px];
+         @apply w-full max-w-[414px] lg:max-w-[1266px] rounded-[6px] py-[38px] lg:py-[40px] px-[24px] lg:px-[43px];
      }
  
      .blog-banner__content {
-         @apply w-full max-w-[749] flex flex-col sm:flex-row justify-between items-start sm:items-end gap-[32px] sm:gap-[115px];
+         @apply w-full max-w-[749] flex flex-col lg:flex-row justify-between items-start lg:items-end gap-[32px] lg:gap-[115px];
      }
  
      .blog-banner__text {
@@ -92,4 +92,5 @@
          }
      }
  }
+
 

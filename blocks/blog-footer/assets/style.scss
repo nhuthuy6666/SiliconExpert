@@ -2,7 +2,7 @@
      @apply bg-white text-very-dark-blue flex flex-col justify-center items-center;
  
      .blog-footer__inner {
-         @apply w-full max-w-[414px] flex flex-col sm:max-w-[836px] py-[64px] gap-[64px];
+         @apply w-full max-w-[414px] flex flex-col lg:max-w-[836px] py-[64px] gap-[64px];
      }
  
      .blog-footer__bar {
@@ -47,4 +47,5 @@
          @apply w-[20px] h-[20px] flex justify-center items-center;
      }
  }
+
 
