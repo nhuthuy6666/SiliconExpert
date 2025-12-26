@@ -52,7 +52,7 @@
 	$main_image_url = $main_post_id ? (string) ( get_the_post_thumbnail_url( $main_post_id, 'full' ) ?: '' ) : '';
 ?>
 
-<div class="single-blog__related">
+<div class="single-blog__related" x-data="{ currentIndex: 0, totalCards: 3 }">
     <div class="single-blog__related-header">
         <div class="single-blog__related-title-wrap">
             <div class="single-blog__related-title-row">
@@ -66,7 +66,7 @@
         </a>
     </div>
     <div class="single-blog__related-viewport">
-        <div class="single-blog__related-track">
+        <div class="single-blog__related-track" x-ref="track" :style="`transform: translateX(-${currentIndex * 100}%)`">
             <?php if ( $main_post_id ) : ?>
                 <a class="single-blog__card" href="<?php echo esc_url( $main_permalink ); ?>">
                     <img class="single-blog__card-image" src="<?php echo esc_url( $main_image_url ); ?>" alt=""/>
@@ -122,12 +122,12 @@
         </div>
     </div>
     <div class="single-blog__related-nav">
-        <div class="single-blog__related-nav-btn">
+        <div class="single-blog__related-nav-btn" @click="currentIndex = Math.max(0, currentIndex - 1)">
             <div class="single-blog__related-nav-icon">
                 <img class="single-blog__related-nav-arrow" src="<?php echo esc_url( $template_uri ); ?>/assets/images/arr-left.svg" alt=""/>
             </div>
         </div>
-        <div class="single-blog__related-nav-btn">
+        <div class="single-blog__related-nav-btn" @click="currentIndex = Math.min(totalCards - 1, currentIndex + 1)">
             <div class="single-blog__related-nav-icon">
                 <img class="single-blog__related-nav-arrow" src="<?php echo esc_url( $template_uri ); ?>/assets/images/arr-right.svg" alt=""/>
             </div>

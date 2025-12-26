@@ -149,14 +149,15 @@
 
 	&__related-track {
 		@apply flex flex-col sm:flex-row gap-[40px] sm:gap-[24px] sm:transition-transform sm:duration-300 sm:ease-out;
+		@apply max-sm:flex-col max-sm:gap-[40px];
 	}
 
 	&__card {
-		@apply w-full sm:w-[324px] max-sm:h-full max-xl:h-[266px] xl:max-w-[406px] flex flex-col gap-[16px];
+		@apply w-full sm:w-[324px] max-sm:h-full max-xl:h-[266px] xl:w-[406px] flex flex-col gap-[16px];
 	}
 
 	&__card-image {
-		@apply w-full max-w-[366px] sm:w-[324px] xl:max-w-[406px] h-[198.81px] sm:h-[221px] rounded-[6px] object-cover;
+		@apply w-full max-w-[366px] sm:w-[324px] xl:w-[406px] h-[198.81px] sm:h-[221px] rounded-[6px] object-cover;
 	}
 
 	&__card-body {
@@ -203,5 +204,6 @@
 
 	&__related-nav-arrow {
 		@apply w-[7.5px] h-[13.75px];
+		filter: brightness(0) saturate(100%) invert(7%) sepia(19%) saturate(1949%) hue-rotate(199deg) brightness(95%) contrast(88%);
 	}
 }

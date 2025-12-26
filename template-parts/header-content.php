@@ -493,19 +493,43 @@
 								<?php endif; ?>
 								<?php if (!empty($resources_modern_text2) && is_array($resources_modern_text2)) : ?>
 									<div class="dropdown-modern__side-list">
-										<?php foreach ($resources_modern_text2 as $it) : ?>
-											<?php
-												$text = '';
-												if (is_array($it)) {
-													$text = $it['text'] ?? ($it['modern_text'] ?? ($it['title'] ?? ''));
-												}
-											?>
-											<?php if (!empty($text)) : ?>
-												<div class="dropdown-modern__side-item">
-														<p class="dropdown-modern__side-text"><?php echo esc_html($text); ?></p>
-													</div>
-												<?php endif; ?>
-										<?php endforeach; ?>
+										<?php
+											$total_items = count($resources_modern_text2);
+											$column1_items = array_slice($resources_modern_text2, 0, 4);
+											$column2_items = array_slice($resources_modern_text2, 4, 3);
+										?>
+										<div class="dropdown-modern__side-column">
+											<?php foreach ($column1_items as $it) : ?>
+												<?php
+													$text = '';
+													if (is_array($it)) {
+														$text = $it['text'] ?? ($it['modern_text'] ?? ($it['title'] ?? ''));
+													}
+												?>
+												<?php if (!empty($text)) : ?>
+													<div class="dropdown-modern__side-item">
+															<p class="dropdown-modern__side-text"><?php echo esc_html($text); ?></p>
+														</div>
+													<?php endif; ?>
+											<?php endforeach; ?>
+										</div>
+										<?php if (!empty($column2_items)): ?>
+											<div class="dropdown-modern__side-column">
+												<?php foreach ($column2_items as $it) : ?>
+													<?php
+														$text = '';
+														if (is_array($it)) {
+															$text = $it['text'] ?? ($it['modern_text'] ?? ($it['title'] ?? ''));
+														}
+													?>
+													<?php if (!empty($text)) : ?>
+														<div class="dropdown-modern__side-item">
+																<p class="dropdown-modern__side-text"><?php echo esc_html($text); ?></p>
+															</div>
+														<?php endif; ?>
+												<?php endforeach; ?>
+											</div>
+										<?php endif; ?>
 									</div>
 								<?php endif; ?>
 							</div>
@@ -558,31 +582,33 @@
 								<?php endif; ?>
 							</div>
 						</div>
-						<div class="dropdown-classic__col dropdown-classic__col--card dropdown-classic__col--card-1">
-							<div class="dropdown-classic__card-header">
-								<?php if (!empty($company_classic_heading2)) : ?>
-									<p class="dropdown-classic__card-title"><?php echo esc_html($company_classic_heading2); ?></p>
-								<?php endif; ?>
-								<?php if (!empty($company_classic_subheading2)) : ?>
-									<p class="dropdown-classic__card-text"><?php echo esc_html($company_classic_subheading2); ?></p>
-								<?php endif; ?>
-							</div>
-							<?php if ($img2_url !== '') : ?>
-								<img class="dropdown-classic__card-image" src="<?php echo esc_url($img2_url); ?>" alt="<?php echo esc_attr($img2_alt); ?>" />
-							<?php endif; ?>
-						</div>
-						<div class="dropdown-classic__col dropdown-classic__col--card dropdown-classic__col--card-2">
-							<div class="dropdown-classic__card-header">
-								<?php if (!empty($company_classic_heading3)) : ?>
-									<p class="dropdown-classic__card-title"><?php echo esc_html($company_classic_heading3); ?></p>
-								<?php endif; ?>
-								<?php if (!empty($company_classic_subheading3)) : ?>
-									<p class="dropdown-classic__card-text"><?php echo esc_html($company_classic_subheading3); ?></p>
+						<div class="dropdown-classic__cards-container">
+							<div class="dropdown-classic__col dropdown-classic__col--card dropdown-classic__col--card-1">
+								<div class="dropdown-classic__card-header">
+									<?php if (!empty($company_classic_heading2)) : ?>
+										<p class="dropdown-classic__card-title"><?php echo esc_html($company_classic_heading2); ?></p>
+									<?php endif; ?>
+									<?php if (!empty($company_classic_subheading2)) : ?>
+										<p class="dropdown-classic__card-text"><?php echo esc_html($company_classic_subheading2); ?></p>
+									<?php endif; ?>
+								</div>
+								<?php if ($img2_url !== '') : ?>
+									<img class="dropdown-classic__card-image" src="<?php echo esc_url($img2_url); ?>" alt="<?php echo esc_attr($img2_alt); ?>" />
 								<?php endif; ?>
 							</div>
-							<?php if ($img3_url !== '') : ?>
-								<img class="dropdown-classic__card-image" src="<?php echo esc_url($img3_url); ?>" alt="<?php echo esc_attr($img3_alt); ?>" />
-							<?php endif; ?>
+							<div class="dropdown-classic__col dropdown-classic__col--card dropdown-classic__col--card-2">
+								<div class="dropdown-classic__card-header">
+									<?php if (!empty($company_classic_heading3)) : ?>
+										<p class="dropdown-classic__card-title"><?php echo esc_html($company_classic_heading3); ?></p>
+									<?php endif; ?>
+									<?php if (!empty($company_classic_subheading3)) : ?>
+										<p class="dropdown-classic__card-text"><?php echo esc_html($company_classic_subheading3); ?></p>
+									<?php endif; ?>
+								</div>
+								<?php if ($img3_url !== '') : ?>
+									<img class="dropdown-classic__card-image" src="<?php echo esc_url($img3_url); ?>" alt="<?php echo esc_attr($img3_alt); ?>" />
+								<?php endif; ?>
+							</div>
 						</div>
 					</div>
 				<?php endif; ?>
