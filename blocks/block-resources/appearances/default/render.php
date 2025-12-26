@@ -50,20 +50,17 @@
 	$main_date = $main_post_id ? get_the_date( 'M j, Y', $main_post_id ) : '';
 	$main_min_read = $main_post_id ? (int) get_post_meta( $main_post_id, '_se_blog_min_read', true ) : 0;
 	$main_image_url = $main_post_id ? (string) ( get_the_post_thumbnail_url( $main_post_id, 'full' ) ?: '' ) : '';
-	$resources_title = 'Resources';
-	$resources_cta_text = 'View all';
-	$resources_cta_url = (string) ( get_post_type_archive_link( 'blog' ) ?: '#' );
 ?>
 
 <div class="se-block-resources">
     <div class="se-block-resources__header">
         <div class="se-block-resources__header-left">
             <div class="se-block-resources__divider"></div>
-            <h6 class="se-block-resources__title"><?php echo esc_html( $resources_title ); ?></h6>
+            <h6 class="se-block-resources__title"><?php echo esc_html( !empty( $data->title ) ? (string) $data->title : 'Resources' ); ?></h6>
         </div>
-        <a href="<?php echo esc_url( $resources_cta_url ); ?>" class="se-block-resources__cta">
+        <a href="<?php echo esc_url( !empty( $data->button_url ) ? (string) $data->button_url : (string) ( get_post_type_archive_link( 'blog' ) ?: '#' ) ); ?>" class="se-block-resources__cta">
             <span class="fill-layout"></span>
-            <p class="se-block-resources__cta-text"><?php echo esc_html( $resources_cta_text ); ?></p>
+            <p class="se-block-resources__cta-text"><?php echo esc_html( !empty( $data->button_text ) ? (string) $data->button_text : 'View all' ); ?></p>
         </a>
     </div>
     <div class="se-block-resources__content">

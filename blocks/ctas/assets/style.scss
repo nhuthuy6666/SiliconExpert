@@ -112,7 +112,7 @@
      @apply w-[542.81px] h-[226.98px] rounded-[8px] shadow-[0_0_80px_rgba(255,236,114,0.75)] sm:w-[837px] sm:h-[350px] sm:rounded-[16px];
  }
 
- @media (min-width: 640px) {
+ @media (min-width: 1280px) {
      .se-ctas__inner:has(.se-ctas__card--left:hover) {
          .se-ctas__card--left { @apply w-[836px]; }
          .se-ctas__card--right { @apply w-[406px]; }

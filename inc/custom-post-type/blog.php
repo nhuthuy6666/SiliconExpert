@@ -32,14 +32,17 @@ add_action('init', function () {
 		'supports' => array('title', 'editor', 'thumbnail', 'excerpt'),
 	));
 
-	register_post_meta('blog', '_se_blog_name', array(
-		'type' => 'string',
-		'single' => true,
+	register_taxonomy('blog_tag', array('blog'), array(
+		'labels' => array(
+			'name' => 'Blog Tags',
+			'singular_name' => 'Blog Tag',
+		),
+		'public' => true,
+		'hierarchical' => false,
+		'show_ui' => true,
+		'show_admin_column' => true,
 		'show_in_rest' => true,
-		'auth_callback' => function () {
-			return current_user_can('edit_posts');
-		},
-		'sanitize_callback' => 'sanitize_text_field',
+		'rewrite' => array('slug' => 'blog-tag'),
 	));
 
 	register_post_meta('blog', '_se_blog_min_read', array(
@@ -62,22 +65,8 @@ add_action('add_meta_boxes', function () {
 		function ($post) {
 			$min_read = get_post_meta($post->ID, '_se_blog_min_read', true);
 			$min_read = $min_read !== '' ? (int) $min_read : '';
-			$blog_name = get_post_meta($post->ID, '_se_blog_name', true);
-			$blog_name = $blog_name ?: '';
 			wp_nonce_field('se_blog_meta_save', 'se_blog_meta_nonce');
 			?>
-			<p>
-				<label for="se_blog_name"><strong>Blog Name</strong></label>
-			</p>
-			<p>
-				<input
-					type="text"
-					id="se_blog_name"
-					name="se_blog_name"
-					value="<?php echo esc_attr($blog_name); ?>"
-					class="widefat"
-				/>
-			</p>
 			<p>
 				<label for="se_blog_min_read"><strong>Time (min read)</strong></label>
 			</p>
@@ -116,12 +105,5 @@ add_action('save_post_blog', function ($post_id) {
 		delete_post_meta($post_id, '_se_blog_min_read');
 	} else {
 		update_post_meta($post_id, '_se_blog_min_read', $min_read);
-	}
-
-	$blog_name = isset($_POST['se_blog_name']) ? sanitize_text_field($_POST['se_blog_name']) : '';
-	if (empty($blog_name)) {
-		delete_post_meta($post_id, '_se_blog_name');
-	} else {
-		update_post_meta($post_id, '_se_blog_name', $blog_name);
 	}
 });

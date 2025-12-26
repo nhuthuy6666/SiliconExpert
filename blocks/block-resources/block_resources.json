@@ -1,0 +1,39 @@
+{
+    "key": "group_block_resources",
+    "title": "Block Resources",
+    "fields": [
+        {
+            "key": "field_block_resources_title",
+            "label": "Title",
+            "name": "title",
+            "type": "text",
+            "required": 0,
+            "default_value": "Resources"
+        },
+        {
+            "key": "field_block_resources_button_text",
+            "label": "Button Text",
+            "name": "button_text",
+            "type": "text",
+            "required": 0,
+            "default_value": "View all"
+        },
+        {
+            "key": "field_block_resources_button_url",
+            "label": "Button URL",
+            "name": "button_url",
+            "type": "url",
+            "required": 0,
+            "default_value": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf/block-resources"
+            }
+        ]
+    ]
+}

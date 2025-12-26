@@ -32,7 +32,7 @@
         @apply h-full;
     }
 
-    p {
+    .se-block-resources__cta-text {
         @apply text-se-dark-navy;
     }
 }
@@ -147,4 +147,3 @@
 .se-block-resources__card-meta {
     @apply flex flex-col gap-[8px];
 }
-
