@@ -7,7 +7,7 @@
 }
 
 .se-block-resources__header-left {
-    @apply flex flex-row items-center;
+    @apply flex flex-row items-center sm:gap-[40px];
 }
 
 .se-block-resources__divider {

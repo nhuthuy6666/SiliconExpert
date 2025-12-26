@@ -21,5 +21,5 @@
 <?php wp_body_open(); ?>
 
 
-<div id="page" class="site relative z-10 sm:mb-[var(--se-footer-height,0px)]">
+<div id="page" class="site relative z-10 xl:mb-[var(--se-footer-height,0px)]">
 	<?php get_template_part('template-parts/header-content'); ?>

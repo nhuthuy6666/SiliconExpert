@@ -114,11 +114,11 @@
 	}
 
 	&__related-title-row {
-		@apply flex flex-row gap-[40px] justify-center items-center;
+		@apply flex flex-row sm:gap-[40px] justify-center items-center;
 	}
 
 	&__related-title-line {
-		@apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90;
+		@apply w-[32px] h-[0px] border-[1px] border-se-yellow -rotate-90 -ml-[32px] sm:-ml-[73px];
 	}
 
 	&__related-title {
